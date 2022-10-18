@@ -1,0 +1,557 @@
+/* This file is generated; DO NOT EDIT. */
+/* @settings
+
+name: Adwaita
+id: com-github-birneee-obsidian-adwaita
+settings:
+    -
+        title: Window Buttons
+        description: Style of minimize, maximize and close window buttons
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-mod
+        title: Enable
+        description: Whether to use the Adwaita style window buttons
+        type: class-select
+        default: adwaita-mod-linux-only
+        allowEmpty: false
+        options:
+            -
+                label: Always
+                value: adwaita-mod-always
+            -
+                label: Linux Only
+                value: adwaita-mod-linux-only
+            -
+                label: Never
+                value: adwaita-mod-never
+    -
+        id: adwaita-mod-scale
+        title: Scale
+        description:
+        type: variable-number
+        default: 1
+    -
+        id: adwaita-mod-right-margin
+        title: Right Margin
+        type: variable-number
+        default: 8
+        format: px
+
+    -
+        title: Tabs
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-tabs
+        title: Enable
+        description: Whether to use the Adwaita style tabs
+        type: class-select
+        default: adwaita-tabs-linux-only
+        allowEmpty: false
+        options:
+            -
+                label: Always
+                value: adwaita-tabs-always
+            -
+                label: Linux Only
+                value: adwaita-tabs-linux-only
+            -
+                label: Never
+                value: adwaita-tabs-never
+
+    -
+        title: Colors
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-colors
+        title: Enable
+        description: Whether to use the Adwaita colors
+        type: class-select
+        default: adwaita-colors-linux-only
+        allowEmpty: false
+        options:
+            -
+                label: Always
+                value: adwaita-colors-always
+            -
+                label: Linux Only
+                value: adwaita-colors-linux-only
+            -
+                label: Never
+                value: adwaita-colors-never
+
+    -
+        title: Font
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-font
+        title: Enable
+        description: Whether to use the Cantarell font (must be installed on system)
+        type: class-select
+        default: adwaita-font-linux-only
+        allowEmpty: false
+        options:
+            -
+                label: Always
+                value: adwaita-font-always
+            -
+                label: Linux Only
+                value: adwaita-font-linux-only
+            -
+                label: Never
+                value: adwaita-font-never
+
+    -
+        title: Icons
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-icon
+        title: Enable
+        description: Whether to use the Adwaita icons
+        type: class-select
+        default: adwaita-icons-linux-only
+        allowEmpty: false
+        options:
+            -
+                label: Always
+                value: adwaita-icons-always
+            -
+                label: Linux Only
+                value: adwaita-icons-linux-only
+            -
+                label: Never
+                value: adwaita-icons-never
+*/
+:root {
+  --adwaita-mod-scale: 1;
+  --adwaita-mod-right-margin: 8px;
+  /* TODO window radius */
+  /* adwaita icon source https://gitlab.gnome.org/GNOME/adwaita-icon-theme */
+  --adwaita-icon-window-close-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 4 4 h 1 h 0.03125 c 0.253906 0.011719 0.511719 0.128906 0.6875 0.3125 l 2.28125 2.28125 l 2.3125 -2.28125 c 0.265625 -0.230469 0.445312 -0.304688 0.6875 -0.3125 h 1 v 1 c 0 0.285156 -0.035156 0.550781 -0.25 0.75 l -2.28125 2.28125 l 2.25 2.25 c 0.1875 0.1875 0.28125 0.453125 0.28125 0.71875 v 1 h -1 c -0.265625 0 -0.53125 -0.09375 -0.71875 -0.28125 l -2.28125 -2.28125 l -2.28125 2.28125 c -0.1875 0.1875 -0.453125 0.28125 -0.71875 0.28125 h -1 v -1 c 0 -0.265625 0.09375 -0.53125 0.28125 -0.71875 l 2.28125 -2.25 l -2.28125 -2.28125 c -0.210938 -0.195312 -0.304688 -0.46875 -0.28125 -0.75 z m 0 0' fill='%23000000'/%3E%3C/svg%3E");
+  --adwaita-icon-window-maximize-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 3.988281 3.992188 v 8.011718 h 8.011719 v -8.011718 z m 2 2 h 4.011719 v 4.011718 h -4.011719 z m 0 0' fill='%23000000'/%3E%3C/svg%3E");
+  --adwaita-icon-window-minimize-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 4 10.007812 h 8 v 1.988282 h -8 z m 0 0' fill='%23000000'/%3E%3C/svg%3E");
+  --adwaita-icon-sidebar-show-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e3436'%3E%3Cpath d='m 6.5 14 v -12 h -5 v 12 z m 0 0' fill-opacity='0.34902'/%3E%3Cpath d='m 3 1 c -1.644531 0 -3 1.355469 -3 3 v 8 c 0 1.644531 1.355469 3 3 3 h 10 c 1.644531 0 3 -1.355469 3 -3 v -8 c 0 -1.644531 -1.355469 -3 -3 -3 z m 0 2 h 10 c 0.570312 0 1 0.429688 1 1 v 8 c 0 0.570312 -0.429688 1 -1 1 h -10 c -0.570312 0 -1 -0.429688 -1 -1 v -8 c 0 -0.570312 0.429688 -1 1 -1 z m 0 0'/%3E%3Cpath d='m 6 2 h 1 v 12 h -1 z m 0 0'/%3E%3C/g%3E%3C/svg%3E%0A");
+  --adwaita-icon-sidebar-show-right-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e3436'%3E%3Cpath d='m 9.5 14 v -12 h 5 v 12 z m 0 0' fill-opacity='0.34902'/%3E%3Cpath d='m 13 1 c 1.644531 0 3 1.355469 3 3 v 8 c 0 1.644531 -1.355469 3 -3 3 h -10 c -1.644531 0 -3 -1.355469 -3 -3 v -8 c 0 -1.644531 1.355469 -3 3 -3 z m 0 2 h -10 c -0.570312 0 -1 0.429688 -1 1 v 8 c 0 0.570312 0.429688 1 1 1 h 10 c 0.570312 0 1 -0.429688 1 -1 v -8 c 0 -0.570312 -0.429688 -1 -1 -1 z m 0 0'/%3E%3Cpath d='m 10 2 h -1 v 12 h 1 z m 0 0'/%3E%3C/g%3E%3C/svg%3E");
+  --adwaita-icon-tab-new-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e3436'%3E%3Cpath d='m 3 0 c -1.644531 0 -3 1.355469 -3 3 v 10 c 0 1.644531 1.355469 3 3 3 h 10 c 1.644531 0 3 -1.355469 3 -3 v -10 c 0 -1.644531 -1.355469 -3 -3 -3 z m 0 2 h 10 c 0.570312 0 1 0.429688 1 1 v 10 c 0 0.570312 -0.429688 1 -1 1 h -10 c -0.570312 0 -1 -0.429688 -1 -1 v -10 c 0 -0.570312 0.429688 -1 1 -1 z m 0 0'/%3E%3Cpath d='m 4 7 h 8 v 2 h -8 z m 0 0'/%3E%3Cpath d='m 9 4 v 8 h -2 v -8 z m 0 0'/%3E%3C/g%3E%3C/svg%3E");
+  --adwaita-icon-view-more-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 7.996094 0 c -1.105469 0 -2 0.894531 -2 2 s 0.894531 2 2 2 c 1.101562 0 2 -0.894531 2 -2 s -0.898438 -2 -2 -2 z m 0 6 c -1.105469 0 -2 0.894531 -2 2 s 0.894531 2 2 2 c 1.101562 0 2 -0.894531 2 -2 s -0.898438 -2 -2 -2 z m 0 6 c -1.105469 0 -2 0.894531 -2 2 s 0.894531 2 2 2 c 1.101562 0 2 -0.894531 2 -2 s -0.898438 -2 -2 -2 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E%0A");
+  --adwaita-icon-go-down-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 1 5 c 0 -0.265625 0.105469 -0.519531 0.292969 -0.707031 c 0.390625 -0.390625 1.023437 -0.390625 1.414062 0 l 5.292969 5.292969 l 5.292969 -5.292969 c 0.390625 -0.390625 1.023437 -0.390625 1.414062 0 c 0.1875 0.1875 0.292969 0.441406 0.292969 0.707031 s -0.105469 0.519531 -0.292969 0.707031 l -6 6 c -0.390625 0.390625 -1.023437 0.390625 -1.414062 0 l -6 -6 c -0.1875 -0.1875 -0.292969 -0.441406 -0.292969 -0.707031 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E");
+  --adwaita-icon-folder-visiting-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 3 1 c -1.644531 0 -3 1.355469 -3 3 v 8 c 0 1.644531 1.355469 3 3 3 h 10 c 1.644531 0 3 -1.355469 3 -3 v -6 c 0 -1.644531 -1.355469 -3 -3 -3 h -3.585938 l -1.707031 -1.707031 c -0.1875 -0.1875 -0.441406 -0.292969 -0.707031 -0.292969 z m 0 2 h 3.585938 l 1.707031 1.707031 c 0.1875 0.1875 0.441406 0.292969 0.707031 0.292969 h 4 c 0.5625 0 1 0.4375 1 1 v 6 c 0 0.566406 -0.4375 1 -1 1 h -10 c -0.5625 0 -1 -0.433594 -1 -1 v -8 c 0 -0.5625 0.4375 -1 1 -1 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E");
+  --adwaita-icon-saved-search-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 6.605469 0.0585938 c -3.578125 0 -6.5 2.9218752 -6.5 6.5000002 s 2.921875 6.496094 6.5 6.496094 c 1.429687 0 2.753906 -0.464844 3.828125 -1.253907 l 2.972656 2.972657 c 0.957031 0.941406 2.363281 -0.496094 1.40625 -1.4375 l -2.957031 -2.957032 c 0.78125 -1.074218 1.25 -2.394531 1.25 -3.820312 c 0 -3.578125 -2.925781 -6.5000002 -6.5 -6.5000002 z m 0 2.0000002 c 2.496093 0 4.5 2.003906 4.5 4.5 s -2.003907 4.496094 -4.5 4.496094 c -2.5 0 -4.5 -2 -4.5 -4.496094 s 2 -4.5 4.5 -4.5 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E%0A"); }
+
+body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.theme-dark,
+body.adwaita-colors-always.theme-dark,
+body.adwaita-colors-linux-only.mod-linux.theme-dark {
+  --titlebar-background: #242424;
+  --titlebar-background-focused: #303030;
+  --titlebar-text-color: #919191;
+  --titlebar-text-color-focused: #ffffff;
+  --icon-color: #929292;
+  --icon-color-hover: #929292;
+  --icon-color-focused: #929292;
+  --tab-text-color: #929292;
+  --tab-text-color-focused: #8a8a8a;
+  --tab-text-color-focused-active-current: #8a8a8a;
+  --background-modifier-hover: #323232; }
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.theme-dark.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.theme-dark.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-always.theme-dark.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
+  body.adwaita-colors-always.theme-dark.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-linux-only.mod-linux.theme-dark.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
+  body.adwaita-colors-linux-only.mod-linux.theme-dark.is-focused .sidebar-toggle-button {
+    --background-modifier-hover: #464646;
+    --icon-color: #ffffff;
+    --icon-color-hover: #ffffff;
+    --icon-color-focused: #ffffff;
+    --tab-text-color-focused: #ffffff;
+    --tab-text-color-focused-active-current: #ffffff; }
+
+body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.theme-light,
+body.adwaita-colors-always.theme-light,
+body.adwaita-colors-linux-only.mod-linux.theme-light {
+  --titlebar-background: #fafafa;
+  --titlebar-background-focused: #eaeaea;
+  --titlebar-text-color: #8c8c8c;
+  --titlebar-text-color-focused: #333333;
+  --icon-color: #939393;
+  --icon-color-hover: #939393;
+  --icon-color-focused: #939393;
+  --tab-text-color: #939393;
+  --tab-text-color-focused: #939393;
+  --tab-text-color-focused-active-current: #939393;
+  --background-modifier-hover: #f0f0f0; }
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.theme-light.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.theme-light.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-always.theme-light.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
+  body.adwaita-colors-always.theme-light.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-linux-only.mod-linux.theme-light.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
+  body.adwaita-colors-linux-only.mod-linux.theme-light.is-focused .sidebar-toggle-button {
+    --background-modifier-hover: #d8d8d8;
+    --icon-color: #333333;
+    --icon-color-hover: #333333;
+    --icon-color-focused: #333333;
+    --tab-text-color-focused: #333333;
+    --tab-text-color-focused-active-current: #333333; }
+
+body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux,
+body.adwaita-mod-always,
+body.adwaita-mod-linux-only.mod-linux {
+  --frame-right-space: calc(var(--adwaita-mod-scale) * 120px); }
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.theme-dark,
+  body.adwaita-mod-always.theme-dark,
+  body.adwaita-mod-linux-only.mod-linux.theme-dark {
+    --adwaita-mod-background: #2e2e2e;
+    --adwaita-mod-background-focus: #444444;
+    --adwaita-mod-background-hover: #4f4f4f;
+    --adwaita-mod-background-active: #6e6e6e;
+    --adwaita-mod-foreground: #929292;
+    --adwaita-mod-foreground-focus: #ffffff; }
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.theme-light,
+  body.adwaita-mod-always.theme-light,
+  body.adwaita-mod-linux-only.mod-linux.theme-light {
+    --adwaita-mod-background: #efefef;
+    --adwaita-mod-background-focus: #d8d8d8;
+    --adwaita-mod-background-hover: #cfcfcf;
+    --adwaita-mod-background-active: #b3b3b3;
+    --adwaita-mod-foreground: #949494;
+    --adwaita-mod-foreground-focus: #2f2f2f; }
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right,
+  body.adwaita-mod-always .titlebar-button-container.mod-right,
+  body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right {
+    transform: scale(var(--adwaita-mod-scale));
+    margin-right: var(--adwaita-mod-right-margin);
+    transform-origin: right; }
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button,
+    body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button,
+    body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button {
+      height: 24px;
+      width: 24px;
+      border-radius: 12px;
+      padding: 0;
+      margin: auto 7px;
+      background: var(--adwaita-mod-background);
+      color: var(--adwaita-mod-foreground); }
+      body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-minimize svg, body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-maximize svg, body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-close svg,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button.mod-minimize svg,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button.mod-maximize svg,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button.mod-close svg,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-minimize svg,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-maximize svg,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-close svg {
+        display: none; }
+      body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button::after,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button::after,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button::after {
+        content: '';
+        background-color: currentColor;
+        width: 16px;
+        height: 16px;
+        margin: auto; }
+      body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-minimize::after,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button.mod-minimize::after,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-minimize::after {
+        -webkit-mask-image: var(--adwaita-icon-window-minimize-symbolic);
+        mask-image: var(--adwaita-icon-window-minimize-symbolic); }
+      body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-maximize::after,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button.mod-maximize::after,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-maximize::after {
+        -webkit-mask-image: var(--adwaita-icon-window-maximize-symbolic);
+        mask-image: var(--adwaita-icon-window-maximize-symbolic); }
+      body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-close,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button.mod-close,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-close {
+        margin-right: 0; }
+        body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-close::after,
+        body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button.mod-close::after,
+        body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button.mod-close::after {
+          -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
+          mask-image: var(--adwaita-icon-window-close-symbolic); }
+      body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button:hover,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button:hover,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button:hover {
+        background: var(--adwaita-mod-background) !important; }
+      body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right .titlebar-button svg,
+      body.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button svg,
+      body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button svg {
+        width: 12px;
+        height: 12px;
+        margin: auto; }
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button,
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-close-button,
+  body.adwaita-mod-always.is-focused .titlebar-button-container.mod-right .titlebar-button,
+  body.adwaita-mod-always.is-focused .modal-close-button,
+  body.adwaita-mod-linux-only.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button,
+  body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button {
+    background: var(--adwaita-mod-background-focus);
+    color: var(--adwaita-mod-foreground-focus); }
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:hover,
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-close-button:hover,
+    body.adwaita-mod-always.is-focused .titlebar-button-container.mod-right .titlebar-button:hover,
+    body.adwaita-mod-always.is-focused .modal-close-button:hover,
+    body.adwaita-mod-linux-only.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:hover,
+    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button:hover {
+      background: var(--adwaita-mod-background-hover) !important; }
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:active,
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-close-button:active,
+    body.adwaita-mod-always.is-focused .titlebar-button-container.mod-right .titlebar-button:active,
+    body.adwaita-mod-always.is-focused .modal-close-button:active,
+    body.adwaita-mod-linux-only.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:active,
+    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button:active {
+      background: var(--adwaita-mod-background-active) !important; }
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .modal-close-button,
+  body.adwaita-mod-always .modal-close-button,
+  body.adwaita-mod-linux-only.mod-linux .modal-close-button {
+    height: 24px;
+    width: 24px;
+    border-radius: 12px;
+    color: var(--adwaita-mod-foreground);
+    background: var(--adwaita-mod-background);
+    transform: scale(var(--adwaita-mod-scale));
+    transform-origin: right; }
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .modal-close-button:before,
+    body.adwaita-mod-always .modal-close-button:before,
+    body.adwaita-mod-linux-only.mod-linux .modal-close-button:before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
+      margin: auto;
+      top: 50%;
+      position: absolute;
+      transform: translateY(-50%);
+      -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
+      mask-image: var(--adwaita-icon-window-close-symbolic);
+      background-color: currentColor; }
+
+body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux,
+body.adwaita-tabs-always,
+body.adwaita-tabs-linux-only.mod-linux {
+  --tab-radius-active: 4px;
+  --tab-width: 10000px;
+  /* infinite width */
+  --tab-max-width: none; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux.theme-dark,
+  body.adwaita-tabs-always.theme-dark,
+  body.adwaita-tabs-linux-only.mod-linux.theme-dark {
+    --tab-background-active: #323232; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux.theme-dark.is-focused,
+    body.adwaita-tabs-always.theme-dark.is-focused,
+    body.adwaita-tabs-linux-only.mod-linux.theme-dark.is-focused {
+      --tab-background-active: #464646; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux.theme-light,
+  body.adwaita-tabs-always.theme-light,
+  body.adwaita-tabs-linux-only.mod-linux.theme-light {
+    --tab-background-active: #f0f0f0; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux.theme-light.is-focused,
+    body.adwaita-tabs-always.theme-light.is-focused,
+    body.adwaita-tabs-linux-only.mod-linux.theme-light.is-focused {
+      --tab-background-active: #d8d8d8; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .workspace-tab-header-container .workspace-tab-header-container-inner,
+  body.adwaita-tabs-always .workspace-tab-header-container .workspace-tab-header-container-inner,
+  body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-container .workspace-tab-header-container-inner {
+    --tab-outline-width: 0; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .workspace-tab-header-container .workspace-tab-header-new-tab,
+  body.adwaita-tabs-always .workspace-tab-header-container .workspace-tab-header-new-tab,
+  body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-container .workspace-tab-header-new-tab {
+    margin-right: var(--size-4-1); }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header,
+  body.adwaita-tabs-always .mod-root .workspace-tab-header,
+  body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header {
+    padding: 0;
+    margin: 5px 3px 5px 2px; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header.is-active,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header.is-active,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header.is-active {
+      color: var(--tab-text-color-focused); }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header:before, body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header:after,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header:before,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header:after,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header:before,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header:after {
+      content: none; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner::after,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header .workspace-tab-header-inner::after,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
+      right: -6px; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-title,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header .workspace-tab-header-inner-title,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-title {
+      padding-left: 20px;
+      text-align: center; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header:last-child .workspace-tab-header-inner::after,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header:last-child .workspace-tab-header-inner::after,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header:last-child .workspace-tab-header-inner::after {
+      content: none; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
+      opacity: 0; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button, body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header :hover .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header :hover .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header :hover .workspace-tab-header-inner-close-button {
+      opacity: 1; }
+
+body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux,
+body.adwaita-font-always,
+body.adwaita-font-linux-only.mod-linux {
+  --titlebar-height: 45px;
+  --font-interface-theme: Cantarell;
+  --font-ui-small: 15px; }
+  body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux .titlebar-text,
+  body.adwaita-font-always .titlebar-text,
+  body.adwaita-font-linux-only.mod-linux .titlebar-text {
+    top: 10px;
+    height: auto; }
+
+body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux,
+body.adwaita-icons-always,
+body.adwaita-icons-linux-only.mod-linux {
+  --titlebar-height: 45px;
+  --header-height: 46px; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux.is-frameless:not(.is-hidden-frameless) .app-container,
+  body.adwaita-icons-always.is-frameless:not(.is-hidden-frameless) .app-container,
+  body.adwaita-icons-linux-only.mod-linux.is-frameless:not(.is-hidden-frameless) .app-container {
+    margin-top: -9px; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .sidebar-toggle-button,
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-new-tab,
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-tab-list,
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .mod-left-split .workspace-tabs .workspace-tab-header-container-inner,
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .mod-right-split .workspace-tabs .workspace-tab-header-container-inner,
+  body.adwaita-icons-always .sidebar-toggle-button,
+  body.adwaita-icons-always .workspace-tab-header-new-tab,
+  body.adwaita-icons-always .workspace-tab-header-tab-list,
+  body.adwaita-icons-always .mod-left-split .workspace-tabs .workspace-tab-header-container-inner,
+  body.adwaita-icons-always .mod-right-split .workspace-tabs .workspace-tab-header-container-inner,
+  body.adwaita-icons-linux-only.mod-linux .sidebar-toggle-button,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-new-tab,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-tab-list,
+  body.adwaita-icons-linux-only.mod-linux .mod-left-split .workspace-tabs .workspace-tab-header-container-inner,
+  body.adwaita-icons-linux-only.mod-linux .mod-right-split .workspace-tabs .workspace-tab-header-container-inner {
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .mod-left-split .workspace-tabs .workspace-tab-header,
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .mod-right-split .workspace-tabs .workspace-tab-header,
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .sidebar-toggle-button .clickable-icon,
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tabs.mod-top .workspace-tab-header-container .clickable-icon,
+  body.adwaita-icons-always .mod-left-split .workspace-tabs .workspace-tab-header,
+  body.adwaita-icons-always .mod-right-split .workspace-tabs .workspace-tab-header,
+  body.adwaita-icons-always .sidebar-toggle-button .clickable-icon,
+  body.adwaita-icons-always .workspace-tabs.mod-top .workspace-tab-header-container .clickable-icon,
+  body.adwaita-icons-linux-only.mod-linux .mod-left-split .workspace-tabs .workspace-tab-header,
+  body.adwaita-icons-linux-only.mod-linux .mod-right-split .workspace-tabs .workspace-tab-header,
+  body.adwaita-icons-linux-only.mod-linux .sidebar-toggle-button .clickable-icon,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tabs.mod-top .workspace-tab-header-container .clickable-icon {
+    height: 34px;
+    min-width: 34px;
+    margin-top: auto;
+    margin-bottom: auto; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .sidebar-toggle-button.mod-left .clickable-icon svg,
+  body.adwaita-icons-always .sidebar-toggle-button.mod-left .clickable-icon svg,
+  body.adwaita-icons-linux-only.mod-linux .sidebar-toggle-button.mod-left .clickable-icon svg {
+    display: none; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .sidebar-toggle-button.mod-left .clickable-icon::after,
+  body.adwaita-icons-always .sidebar-toggle-button.mod-left .clickable-icon::after,
+  body.adwaita-icons-linux-only.mod-linux .sidebar-toggle-button.mod-left .clickable-icon::after {
+    content: '';
+    background-color: currentColor !important;
+    -webkit-mask-image: var(--adwaita-icon-sidebar-show-symbolic);
+    mask-image: var(--adwaita-icon-sidebar-show-symbolic);
+    width: 16px;
+    height: 16px;
+    margin: auto; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .sidebar-toggle-button.mod-right .clickable-icon svg,
+  body.adwaita-icons-always .sidebar-toggle-button.mod-right .clickable-icon svg,
+  body.adwaita-icons-linux-only.mod-linux .sidebar-toggle-button.mod-right .clickable-icon svg {
+    display: none; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .sidebar-toggle-button.mod-right .clickable-icon::after,
+  body.adwaita-icons-always .sidebar-toggle-button.mod-right .clickable-icon::after,
+  body.adwaita-icons-linux-only.mod-linux .sidebar-toggle-button.mod-right .clickable-icon::after {
+    content: '';
+    background-color: currentColor !important;
+    -webkit-mask-image: var(--adwaita-icon-sidebar-show-right-symbolic);
+    mask-image: var(--adwaita-icon-sidebar-show-right-symbolic);
+    width: 16px;
+    height: 16px;
+    margin: auto; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-new-tab .clickable-icon svg,
+  body.adwaita-icons-always .workspace-tab-header-new-tab .clickable-icon svg,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-new-tab .clickable-icon svg {
+    display: none; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-new-tab .clickable-icon::after,
+  body.adwaita-icons-always .workspace-tab-header-new-tab .clickable-icon::after,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-new-tab .clickable-icon::after {
+    content: '';
+    background-color: currentColor !important;
+    -webkit-mask-image: var(--adwaita-icon-tab-new-symbolic);
+    mask-image: var(--adwaita-icon-tab-new-symbolic);
+    width: 16px;
+    height: 16px;
+    margin: auto; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-tab-list .clickable-icon svg,
+  body.adwaita-icons-always .workspace-tab-header-tab-list .clickable-icon svg,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-tab-list .clickable-icon svg {
+    display: none; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-tab-list .clickable-icon::after,
+  body.adwaita-icons-always .workspace-tab-header-tab-list .clickable-icon::after,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-tab-list .clickable-icon::after {
+    content: '';
+    background-color: currentColor !important;
+    -webkit-mask-image: var(--adwaita-icon-go-down-symbolic);
+    mask-image: var(--adwaita-icon-go-down-symbolic);
+    width: 16px;
+    height: 16px;
+    margin: auto; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-inner-close-button svg,
+  body.adwaita-icons-always .workspace-tab-header-inner-close-button svg,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-inner-close-button svg {
+    display: none; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header-inner-close-button::after,
+  body.adwaita-icons-always .workspace-tab-header-inner-close-button::after,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header-inner-close-button::after {
+    content: '';
+    background-color: currentColor !important;
+    -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
+    mask-image: var(--adwaita-icon-window-close-symbolic);
+    width: 16px;
+    height: 16px;
+    margin: auto; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon svg,
+  body.adwaita-icons-always .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon svg,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon svg {
+    display: none; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon::after,
+  body.adwaita-icons-always .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon::after,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header[data-type="file-explorer"] .workspace-tab-header-inner-icon::after {
+    content: '';
+    background-color: currentColor !important;
+    -webkit-mask-image: var(--adwaita-icon-folder-visiting-symbolic);
+    mask-image: var(--adwaita-icon-folder-visiting-symbolic);
+    width: 16px;
+    height: 16px;
+    margin: auto; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon svg,
+  body.adwaita-icons-always .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon svg,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon svg {
+    display: none; }
+  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon::after,
+  body.adwaita-icons-always .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon::after,
+  body.adwaita-icons-linux-only.mod-linux .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon::after {
+    content: '';
+    background-color: currentColor !important;
+    -webkit-mask-image: var(--adwaita-icon-saved-search-symbolic);
+    mask-image: var(--adwaita-icon-saved-search-symbolic);
+    width: 16px;
+    height: 16px;
+    margin: auto; }
