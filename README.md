@@ -43,10 +43,24 @@ As a workaround use the [Rounded Window Corners](https://extensions.gnome.org/ex
 
 ## Installation
 
-1. Copy `adwaita.css` to your `.obsidian/snippets` folder
-2. In Obsidian go to `Settings > 
-Options > Appearance > CSS snippets` and enable the `adwaita` snippet
-3. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
+### Obsidian Community Theme Store
+TBD add to theme store
+
+### Automatic
+1. Install [just](https://github.com/casey/just)
+2. Set `OBSIDIAN_HOME` environment variable to your vault path
+3. run `just install`
+4. In Obsidian go to `Settings > 
+Options > Appearance > Themes` and select the `Adwaita` theme
+5. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
+
+### Manual
+
+1. create a `.obsidian/themes/Adwaita` directory in your Obsidian vault
+2. Copy `theme.css` and `manifest.json` to the created `Adwaita` folder
+3. In Obsidian go to `Settings > 
+Options > Appearance > Themes` and select the `Adwaita` theme
+4. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
 
 ## Build
 
