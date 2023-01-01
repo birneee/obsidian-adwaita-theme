@@ -38,6 +38,18 @@ settings:
         type: variable-number
         default: 8
         format: px
+    -
+        id: adwaita-window-button-minimize-hide
+        title: Hide minimize button
+        type: class-toggle
+    -
+        id: adwaita-window-button-maximize-hide
+        title: Hide maximize button
+        type: class-toggle
+    -
+        id: adwaita-window-button-close-hide
+        title: Hide close button
+        type: class-toggle
 
     -
         title: Tabs
@@ -136,18 +148,9 @@ settings:
     --adwaita-mod-scale: 1;
     --adwaita-mod-right-margin: 8px;
     /* TODO window radius */
-    /* adwaita icon source https://gitlab.gnome.org/GNOME/adwaita-icon-theme */
-    --adwaita-icon-window-close-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 4 4 h 1 h 0.03125 c 0.253906 0.011719 0.511719 0.128906 0.6875 0.3125 l 2.28125 2.28125 l 2.3125 -2.28125 c 0.265625 -0.230469 0.445312 -0.304688 0.6875 -0.3125 h 1 v 1 c 0 0.285156 -0.035156 0.550781 -0.25 0.75 l -2.28125 2.28125 l 2.25 2.25 c 0.1875 0.1875 0.28125 0.453125 0.28125 0.71875 v 1 h -1 c -0.265625 0 -0.53125 -0.09375 -0.71875 -0.28125 l -2.28125 -2.28125 l -2.28125 2.28125 c -0.1875 0.1875 -0.453125 0.28125 -0.71875 0.28125 h -1 v -1 c 0 -0.265625 0.09375 -0.53125 0.28125 -0.71875 l 2.28125 -2.25 l -2.28125 -2.28125 c -0.210938 -0.195312 -0.304688 -0.46875 -0.28125 -0.75 z m 0 0' fill='%23000000'/%3E%3C/svg%3E");
-    --adwaita-icon-window-maximize-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 3.988281 3.992188 v 8.011718 h 8.011719 v -8.011718 z m 2 2 h 4.011719 v 4.011718 h -4.011719 z m 0 0' fill='%23000000'/%3E%3C/svg%3E");
-    --adwaita-icon-window-minimize-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 4 10.007812 h 8 v 1.988282 h -8 z m 0 0' fill='%23000000'/%3E%3C/svg%3E");
-    --adwaita-icon-sidebar-show-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e3436'%3E%3Cpath d='m 6.5 14 v -12 h -5 v 12 z m 0 0' fill-opacity='0.34902'/%3E%3Cpath d='m 3 1 c -1.644531 0 -3 1.355469 -3 3 v 8 c 0 1.644531 1.355469 3 3 3 h 10 c 1.644531 0 3 -1.355469 3 -3 v -8 c 0 -1.644531 -1.355469 -3 -3 -3 z m 0 2 h 10 c 0.570312 0 1 0.429688 1 1 v 8 c 0 0.570312 -0.429688 1 -1 1 h -10 c -0.570312 0 -1 -0.429688 -1 -1 v -8 c 0 -0.570312 0.429688 -1 1 -1 z m 0 0'/%3E%3Cpath d='m 6 2 h 1 v 12 h -1 z m 0 0'/%3E%3C/g%3E%3C/svg%3E%0A");
-    --adwaita-icon-sidebar-show-right-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e3436'%3E%3Cpath d='m 9.5 14 v -12 h 5 v 12 z m 0 0' fill-opacity='0.34902'/%3E%3Cpath d='m 13 1 c 1.644531 0 3 1.355469 3 3 v 8 c 0 1.644531 -1.355469 3 -3 3 h -10 c -1.644531 0 -3 -1.355469 -3 -3 v -8 c 0 -1.644531 1.355469 -3 3 -3 z m 0 2 h -10 c -0.570312 0 -1 0.429688 -1 1 v 8 c 0 0.570312 0.429688 1 1 1 h 10 c 0.570312 0 1 -0.429688 1 -1 v -8 c 0 -0.570312 -0.429688 -1 -1 -1 z m 0 0'/%3E%3Cpath d='m 10 2 h -1 v 12 h 1 z m 0 0'/%3E%3C/g%3E%3C/svg%3E");
-    --adwaita-icon-tab-new-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232e3436'%3E%3Cpath d='m 3 0 c -1.644531 0 -3 1.355469 -3 3 v 10 c 0 1.644531 1.355469 3 3 3 h 10 c 1.644531 0 3 -1.355469 3 -3 v -10 c 0 -1.644531 -1.355469 -3 -3 -3 z m 0 2 h 10 c 0.570312 0 1 0.429688 1 1 v 10 c 0 0.570312 -0.429688 1 -1 1 h -10 c -0.570312 0 -1 -0.429688 -1 -1 v -10 c 0 -0.570312 0.429688 -1 1 -1 z m 0 0'/%3E%3Cpath d='m 4 7 h 8 v 2 h -8 z m 0 0'/%3E%3Cpath d='m 9 4 v 8 h -2 v -8 z m 0 0'/%3E%3C/g%3E%3C/svg%3E");
-    --adwaita-icon-view-more-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 7.996094 0 c -1.105469 0 -2 0.894531 -2 2 s 0.894531 2 2 2 c 1.101562 0 2 -0.894531 2 -2 s -0.898438 -2 -2 -2 z m 0 6 c -1.105469 0 -2 0.894531 -2 2 s 0.894531 2 2 2 c 1.101562 0 2 -0.894531 2 -2 s -0.898438 -2 -2 -2 z m 0 6 c -1.105469 0 -2 0.894531 -2 2 s 0.894531 2 2 2 c 1.101562 0 2 -0.894531 2 -2 s -0.898438 -2 -2 -2 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E%0A");
-    --adwaita-icon-go-down-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 1 5 c 0 -0.265625 0.105469 -0.519531 0.292969 -0.707031 c 0.390625 -0.390625 1.023437 -0.390625 1.414062 0 l 5.292969 5.292969 l 5.292969 -5.292969 c 0.390625 -0.390625 1.023437 -0.390625 1.414062 0 c 0.1875 0.1875 0.292969 0.441406 0.292969 0.707031 s -0.105469 0.519531 -0.292969 0.707031 l -6 6 c -0.390625 0.390625 -1.023437 0.390625 -1.414062 0 l -6 -6 c -0.1875 -0.1875 -0.292969 -0.441406 -0.292969 -0.707031 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E");
-    --adwaita-icon-folder-visiting-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 3 1 c -1.644531 0 -3 1.355469 -3 3 v 8 c 0 1.644531 1.355469 3 3 3 h 10 c 1.644531 0 3 -1.355469 3 -3 v -6 c 0 -1.644531 -1.355469 -3 -3 -3 h -3.585938 l -1.707031 -1.707031 c -0.1875 -0.1875 -0.441406 -0.292969 -0.707031 -0.292969 z m 0 2 h 3.585938 l 1.707031 1.707031 c 0.1875 0.1875 0.441406 0.292969 0.707031 0.292969 h 4 c 0.5625 0 1 0.4375 1 1 v 6 c 0 0.566406 -0.4375 1 -1 1 h -10 c -0.5625 0 -1 -0.433594 -1 -1 v -8 c 0 -0.5625 0.4375 -1 1 -1 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E");
-    --adwaita-icon-saved-search-symbolic: url("data:image/svg+xml,%3Csvg height='16px' viewBox='0 0 16 16' width='16px' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m 6.605469 0.0585938 c -3.578125 0 -6.5 2.9218752 -6.5 6.5000002 s 2.921875 6.496094 6.5 6.496094 c 1.429687 0 2.753906 -0.464844 3.828125 -1.253907 l 2.972656 2.972657 c 0.957031 0.941406 2.363281 -0.496094 1.40625 -1.4375 l -2.957031 -2.957032 c 0.78125 -1.074218 1.25 -2.394531 1.25 -3.820312 c 0 -3.578125 -2.925781 -6.5000002 -6.5 -6.5000002 z m 0 2.0000002 c 2.496093 0 4.5 2.003906 4.5 4.5 s -2.003907 4.496094 -4.5 4.496094 c -2.5 0 -4.5 -2 -4.5 -4.496094 s 2 -4.5 4.5 -4.5 z m 0 0' fill='%232e3436'/%3E%3C/svg%3E%0A");
 }
+
+@import '../generated/adw_icons';
 
 // Adwaita colors
 body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux, // default if obsidian-style-settings plugin is not used
@@ -201,6 +204,9 @@ body.adwaita-colors-linux-only.mod-linux {
             };
         }
     }
+    .titlebar-button.mod-logo:hover {
+        background-color: inherit;
+    }
 }
 
 // Adwaita window mod buttons
@@ -227,6 +233,18 @@ body.adwaita-mod-linux-only.mod-linux {
         --adwaita-mod-foreground-focus: #2f2f2f;
     }
 
+    &.adwaita-window-button-minimize-hide .titlebar-button-container.mod-right .titlebar-button.mod-minimize{
+        display: none
+    }
+
+    &.adwaita-window-button-maximize-hide .titlebar-button-container.mod-right .titlebar-button.mod-maximize{
+        display: none
+    }
+
+    &.adwaita-window-button-close-hide .titlebar-button-container.mod-right .titlebar-button.mod-close{
+        display: none
+    }
+
     .titlebar-button-container.mod-right {
         transform: scale(var(--adwaita-mod-scale));
         margin-right: var(--adwaita-mod-right-margin);
@@ -237,7 +255,7 @@ body.adwaita-mod-linux-only.mod-linux {
             width: 24px;
             border-radius: 12px;
             padding: 0;
-            margin: auto 7px;
+            margin: auto 0 auto 14px;
 
             background: var(--adwaita-mod-background);
             color: var(--adwaita-mod-foreground);
@@ -268,12 +286,9 @@ body.adwaita-mod-linux-only.mod-linux {
                 mask-image: var(--adwaita-icon-window-maximize-symbolic);
             }
     
-            &.mod-close {
-                margin-right: 0;
-                &::after {
-                    -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
-                    mask-image: var(--adwaita-icon-window-close-symbolic);
-                }
+            &.mod-close::after {
+                -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
+                mask-image: var(--adwaita-icon-window-close-symbolic);
             }
     
             &:hover {
@@ -414,9 +429,14 @@ body.adwaita-icons-linux-only.mod-linux {
     --titlebar-height: 45px;
     --header-height: 46px;
 
+    svg.logo-wireframe {
+        stroke-width: 7;
+    }
+
     &.is-frameless:not(.is-hidden-frameless) {
         .app-container {
             margin-top: -9px;
+            height: calc(100% + 9px);
         }
     }
 
@@ -480,6 +500,6 @@ body.adwaita-icons-linux-only.mod-linux {
     }
 
     .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon {
-        @include replace-svg(var(--adwaita-icon-saved-search-symbolic))
+        @include replace-svg(var(--adwaita-icon-folder-saved-search-symbolic))
     }
 }
