@@ -389,43 +389,43 @@ body.adwaita-tabs-linux-only.mod-linux {
   body.adwaita-tabs-always .workspace-tab-header-container .workspace-tab-header-new-tab,
   body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-container .workspace-tab-header-new-tab {
     margin-right: var(--size-4-1); }
-  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header,
-  body.adwaita-tabs-always .mod-root .workspace-tab-header,
-  body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header {
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
+  body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
+  body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
     padding: 0;
     margin: 5px 3px 5px 2px; }
-    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header.is-active,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header.is-active,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header.is-active {
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active {
       color: var(--tab-text-color-focused); }
-    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header:before, body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header:after,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header:before,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header:after,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header:before,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header:after {
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:before, body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:after,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:before,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:after,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:before,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:after {
       content: none; }
-    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner::after,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header .workspace-tab-header-inner::after,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner::after {
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner::after,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner::after,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner::after {
       right: -6px; }
-    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-title,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header .workspace-tab-header-inner-title,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-title {
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-title,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-title,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-title {
       padding-left: 20px;
       text-align: center; }
-    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header:last-child .workspace-tab-header-inner::after,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header:last-child .workspace-tab-header-inner::after,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header:last-child .workspace-tab-header-inner::after {
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:last-child .workspace-tab-header-inner::after,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:last-child .workspace-tab-header-inner::after,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header:last-child .workspace-tab-header-inner::after {
       content: none; }
-    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header .workspace-tab-header-inner-close-button {
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header .workspace-tab-header-inner-close-button {
       opacity: 0; }
-    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button, body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header :hover .workspace-tab-header-inner-close-button,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
-    body.adwaita-tabs-always .mod-root .workspace-tab-header :hover .workspace-tab-header-inner-close-button,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
-    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header :hover .workspace-tab-header-inner-close-button {
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button, body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header :hover .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header :hover .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header :hover .workspace-tab-header-inner-close-button {
       opacity: 1; }
 
 body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux,

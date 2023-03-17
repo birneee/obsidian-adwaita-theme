@@ -375,7 +375,7 @@ body.adwaita-tabs-linux-only.mod-linux {
         }
     }
 
-    .mod-root .workspace-tab-header {
+    .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
         padding: 0;
         margin: 5px 3px 5px 2px;
 
