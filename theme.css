@@ -74,6 +74,10 @@ settings:
             -
                 label: Never
                 value: adwaita-tabs-never
+    -
+        id: adwaita-tabs-short
+        title: Short
+        type: class-toggle
 
     -
         title: Colors
@@ -381,10 +385,13 @@ body.adwaita-mod-linux-only.mod-linux {
 body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux,
 body.adwaita-tabs-always,
 body.adwaita-tabs-linux-only.mod-linux {
-  --tab-radius-active: 4px;
-  --tab-width: 10000px;
-  /* infinite width */
-  --tab-max-width: none; }
+  --tab-radius-active: 4px; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux:not(.adwaita-tabs-short),
+  body.adwaita-tabs-always:not(.adwaita-tabs-short),
+  body.adwaita-tabs-linux-only.mod-linux:not(.adwaita-tabs-short) {
+    --tab-width: 10000px;
+    /* infinite width */
+    --tab-max-width: none; }
   body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux.theme-dark,
   body.adwaita-tabs-always.theme-dark,
   body.adwaita-tabs-linux-only.mod-linux.theme-dark {
@@ -409,6 +416,17 @@ body.adwaita-tabs-linux-only.mod-linux {
   body.adwaita-tabs-always .workspace-tab-header-container .workspace-tab-header-new-tab,
   body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-container .workspace-tab-header-new-tab {
     margin-right: var(--size-4-1); }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .workspace-tab-header-new-tab,
+  body.adwaita-tabs-always .workspace-tab-header-new-tab,
+  body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-new-tab {
+    order: 1; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .workspace-tab-header-tab-list,
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .sidebar-toggle-button.mod-right,
+  body.adwaita-tabs-always .workspace-tab-header-tab-list,
+  body.adwaita-tabs-always .sidebar-toggle-button.mod-right,
+  body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-tab-list,
+  body.adwaita-tabs-linux-only.mod-linux .sidebar-toggle-button.mod-right {
+    order: 2; }
   body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
   body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header,
   body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {

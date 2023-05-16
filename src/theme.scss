@@ -73,6 +73,10 @@ settings:
             -
                 label: Never
                 value: adwaita-tabs-never
+    -
+        id: adwaita-tabs-short
+        title: Short
+        type: class-toggle
 
     -
         title: Colors
@@ -368,8 +372,11 @@ body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mo
 body.adwaita-tabs-always,
 body.adwaita-tabs-linux-only.mod-linux {
     --tab-radius-active: 4px;
-    --tab-width: 10000px; /* infinite width */
-    --tab-max-width: none;
+
+    &:not(.adwaita-tabs-short) {
+        --tab-width: 10000px; /* infinite width */
+        --tab-max-width: none;
+    }
 
     &.theme-dark {
         --tab-background-active: #323232;
@@ -392,6 +399,15 @@ body.adwaita-tabs-linux-only.mod-linux {
         .workspace-tab-header-new-tab {
             margin-right: var(--size-4-1);
         }
+    }
+
+    .workspace-tab-header-new-tab {
+        order: 1;
+    }
+
+    .workspace-tab-header-tab-list,
+    .sidebar-toggle-button.mod-right {
+        order: 2
     }
 
     .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header {
