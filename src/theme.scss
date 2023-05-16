@@ -245,6 +245,25 @@ body.adwaita-mod-linux-only.mod-linux {
         display: none
     }
 
+
+
+    &.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide),
+    &.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide),
+    &.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide){
+        --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px));
+    }
+
+    &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide),
+    &.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide),
+    &.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide){
+        --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px));
+    }
+
+    &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide{
+        --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px - 38px));
+    }
+
+
     .titlebar-button-container.mod-right {
         transform: scale(var(--adwaita-mod-scale));
         margin-right: var(--adwaita-mod-right-margin);
