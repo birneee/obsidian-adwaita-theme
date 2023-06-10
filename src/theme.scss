@@ -449,7 +449,7 @@ body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mo
 body.adwaita-font-always,
 body.adwaita-font-linux-only.mod-linux {
     --titlebar-height: 45px;
-    --font-interface-theme: Cantarell;
+    --font-interface-theme: Cantarell, Noto Color Emoji;
     --font-ui-small: 15px;
     .titlebar-text {
         top: 10px;
@@ -465,7 +465,7 @@ body.adwaita-icons-linux-only.mod-linux {
     --header-height: 46px;
 
     svg.logo-wireframe {
-        stroke-width: 7;
+        stroke-width: 45;
     }
 
     &.is-frameless:not(.is-hidden-frameless) {

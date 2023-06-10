@@ -470,7 +470,7 @@ body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mo
 body.adwaita-font-always,
 body.adwaita-font-linux-only.mod-linux {
   --titlebar-height: 45px;
-  --font-interface-theme: Cantarell;
+  --font-interface-theme: Cantarell, Noto Color Emoji;
   --font-ui-small: 15px; }
   body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux .titlebar-text,
   body.adwaita-font-always .titlebar-text,
@@ -486,7 +486,7 @@ body.adwaita-icons-linux-only.mod-linux {
   body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux svg.logo-wireframe,
   body.adwaita-icons-always svg.logo-wireframe,
   body.adwaita-icons-linux-only.mod-linux svg.logo-wireframe {
-    stroke-width: 7; }
+    stroke-width: 45; }
   body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux.is-frameless:not(.is-hidden-frameless) .app-container,
   body.adwaita-icons-always.is-frameless:not(.is-hidden-frameless) .app-container,
   body.adwaita-icons-linux-only.mod-linux.is-frameless:not(.is-hidden-frameless) .app-container {
