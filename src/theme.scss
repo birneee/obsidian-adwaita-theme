@@ -155,16 +155,39 @@ settings:
 }
 
 @import '../generated/adw_icons';
+@import 'adwaita_colors_dark';
+@import 'adwaita_colors_light';
+@import 'adwaita_colors';
+
+body {
+    @include adwaita-colors;
+    &.theme-dark {
+        @include adwaita-colors-dark;
+    }
+    &.theme-light {
+        @include adwaita-colors-light;
+    }
+}
 
 // Adwaita colors
 body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux, // default if obsidian-style-settings plugin is not used
 body.adwaita-colors-always,
 body.adwaita-colors-linux-only.mod-linux {
+    --titlebar-background: var(--adwaita-headerbar-backdrop-color);
+    --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
+    --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
+    &.is-focused {
+        .workspace-tabs.mod-top .workspace-tab-header-container,
+        .sidebar-toggle-button {
+            --icon-color: var(--adwaita-headerbar-fg-color);
+            --icon-color-hover: var(--adwaita-headerbar-fg-color);
+            --icon-color-focused: var(--adwaita-headerbar-fg-color);
+            --tab-text-color-focused: var(--adwaita-headerbar-fg-color);
+            --tab-text-color-focused-active-current: var(--adwaita-headerbar-fg-color);
+        };
+    }
     &.theme-dark  {
-        --titlebar-background: #242424;
-        --titlebar-background-focused: #303030;
         --titlebar-text-color: #919191;
-        --titlebar-text-color-focused: #ffffff;
         --icon-color: #929292;
         --icon-color-hover: #929292;
         --icon-color-focused: #929292;
@@ -176,19 +199,11 @@ body.adwaita-colors-linux-only.mod-linux {
             .workspace-tabs.mod-top .workspace-tab-header-container,
             .sidebar-toggle-button {
                 --background-modifier-hover: #464646;
-                --icon-color: #ffffff;
-                --icon-color-hover: #ffffff;
-                --icon-color-focused: #ffffff;
-                --tab-text-color-focused: #ffffff;
-                --tab-text-color-focused-active-current: #ffffff;
             };
         }
     }
     &.theme-light {
-        --titlebar-background: #fafafa;
-        --titlebar-background-focused: #eaeaea;
         --titlebar-text-color: #8c8c8c;
-        --titlebar-text-color-focused: #333333;
         --icon-color: #939393;
         --icon-color-hover: #939393;
         --icon-color-focused: #939393;
@@ -200,11 +215,6 @@ body.adwaita-colors-linux-only.mod-linux {
             .workspace-tabs.mod-top .workspace-tab-header-container,
             .sidebar-toggle-button {
                 --background-modifier-hover: #d8d8d8;
-                --icon-color: #333333;
-                --icon-color-hover: #333333;
-                --icon-color-focused: #333333;
-                --tab-text-color-focused: #333333;
-                --tab-text-color-focused-active-current: #333333;
             };
         }
     }
@@ -218,6 +228,7 @@ body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-l
 body.adwaita-mod-always,
 body.adwaita-mod-linux-only.mod-linux {
     --frame-right-space: calc(var(--adwaita-mod-scale) * 120px);
+    --adwaita-mod-foreground-focus: var(--adwaita-headerbar-fg-color);
 
     &.theme-dark {
         --adwaita-mod-background: #2e2e2e;
@@ -225,7 +236,6 @@ body.adwaita-mod-linux-only.mod-linux {
         --adwaita-mod-background-hover: #4f4f4f;
         --adwaita-mod-background-active: #6e6e6e;
         --adwaita-mod-foreground: #929292;
-        --adwaita-mod-foreground-focus: #ffffff;
     }
     
     &.theme-light {
@@ -234,7 +244,6 @@ body.adwaita-mod-linux-only.mod-linux {
         --adwaita-mod-background-hover: #cfcfcf;
         --adwaita-mod-background-active: #b3b3b3;
         --adwaita-mod-foreground: #949494;
-        --adwaita-mod-foreground-focus: #2f2f2f;
     }
 
     &.adwaita-window-button-minimize-hide .titlebar-button-container.mod-right .titlebar-button.mod-minimize{
