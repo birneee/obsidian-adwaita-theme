@@ -435,6 +435,7 @@ body.adwaita-tabs-linux-only.mod-linux {
         }
         .workspace-tab-header-inner-close-button {
             opacity: 0;
+            display: flex;
         }
         &.is-active, :hover {
             .workspace-tab-header-inner-close-button {
