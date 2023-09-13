@@ -176,6 +176,7 @@ body.adwaita-colors-linux-only.mod-linux {
     --titlebar-background: var(--adwaita-headerbar-backdrop-color);
     --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
     --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
+    --text-normal: var(--adwaita-view-fg-color);
     &.is-focused {
         .workspace-tabs.mod-top .workspace-tab-header-container,
         .sidebar-toggle-button {
@@ -467,6 +468,7 @@ body.adwaita-font-linux-only.mod-linux {
     --titlebar-height: 45px;
     --font-interface-theme: Cantarell, "Noto Color Emoji Only";
     --font-ui-small: 15px;
+    --h1-weight: 900;
     .titlebar-text {
         top: 10px;
         height: auto;

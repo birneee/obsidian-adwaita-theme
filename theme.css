@@ -287,7 +287,8 @@ body.adwaita-colors-always,
 body.adwaita-colors-linux-only.mod-linux {
   --titlebar-background: var(--adwaita-headerbar-backdrop-color);
   --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
-  --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color); }
+  --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
+  --text-normal: var(--adwaita-view-fg-color); }
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .sidebar-toggle-button,
   body.adwaita-colors-always.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
@@ -592,7 +593,8 @@ body.adwaita-font-always,
 body.adwaita-font-linux-only.mod-linux {
   --titlebar-height: 45px;
   --font-interface-theme: Cantarell, "Noto Color Emoji Only";
-  --font-ui-small: 15px; }
+  --font-ui-small: 15px;
+  --h1-weight: 900; }
   body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux .titlebar-text,
   body.adwaita-font-always .titlebar-text,
   body.adwaita-font-linux-only.mod-linux .titlebar-text {
