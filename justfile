@@ -20,7 +20,7 @@ adw-icons:
 adw_icons_scss_output := "./generated/_adw_icons.scss"
 
 adw-icons-scss:
-    #!/bin/bash
+    #!/usr/bin/env bash
     mkdir -p ./generated
     echo -e "// This file is generated; DO NOT EDIT.\n" > {{adw_icons_scss_output}}
     echo ":root {" >> {{adw_icons_scss_output}}
@@ -51,7 +51,7 @@ watch:
     watchexec -e scss -- bash -c "just css; just install"
 
 install:
-    #!/bin/bash
+    #!/usr/bin/env bash
     if ! [[ -d "${OBSIDIAN_HOME}" ]]; then
         echo "failed to install: environment variable OBSIDIAN_HOME not set or does not exist"; exit 1
     fi
