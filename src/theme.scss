@@ -455,18 +455,12 @@ body.adwaita-tabs-linux-only.mod-linux {
     }
 }
 
-@font-face {
-    font-family: "Noto Color Emoji Only";
-    src: local("Noto Color Emoji");
-    unicode-range: U+00A9-FFFFFF;
-}
-
 // Adwaita font
 body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux, // default if obsidian-style-settings plugin is not used
 body.adwaita-font-always,
 body.adwaita-font-linux-only.mod-linux {    
     --titlebar-height: 45px;
-    --font-interface-theme: Cantarell, "Noto Color Emoji Only";
+    --font-interface-theme: Cantarell;
     --font-ui-small: 15px;
     --h1-weight: 900;
     .titlebar-text {
