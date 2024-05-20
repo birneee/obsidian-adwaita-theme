@@ -185,7 +185,8 @@ body.adwaita-colors-linux-only.mod-linux {
         --sidebar-background: var(--adwaita-sidebar-bg-color);
         .workspace-tabs.mod-top .workspace-tab-header-container,
         .sidebar-toggle-button,
-        .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header {
+        .mod-sidedock.mod-left-split::before,
+        .mod-sidedock.mod-left-split .workspace-tab-header {
             --icon-color: var(--adwaita-headerbar-fg-color);
             --icon-color-hover: var(--adwaita-headerbar-fg-color);
             --icon-color-focused: var(--adwaita-headerbar-fg-color);
@@ -235,11 +236,20 @@ body.adwaita-colors-linux-only.mod-linux {
                 border-color: var(--sidebar-background);
             }
         }
+
+        &:not(.is-left-sidedock-open) {
+            .side-dock-ribbon,
+            .mod-sidedock.mod-left-split {
+                --sidebar-background: var(--adwaita-view-bg-color);
+            }
+        }
+
         .side-dock-ribbon,
         .mod-sidedock,
         .mod-sidedock .mod-top {
             --tab-container-background: var(--sidebar-background);
             background-color: var(--sidebar-background);
+            transition: background-color 0ms;
             --background-modifier-hover: var(--sidebar-background-modifier-hover);
             .workspace-tabs {
                 .workspace-tab-header-container {
@@ -611,6 +621,7 @@ body.adwaita-icons-linux-only.mod-linux {
     .mod-sidedock.mod-left-split {
         &:before {
             content: 'Obsidian';
+            color: var(--icon-color);
             padding: 12px;
             padding-right: calc(12px + 43px);
             font-weight: 600;

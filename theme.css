@@ -311,21 +311,27 @@ body.adwaita-colors-linux-only.mod-linux {
     --sidebar-background: var(--adwaita-sidebar-bg-color); }
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-light .workspace-tabs.mod-top .workspace-tab-header-container,
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-light .sidebar-toggle-button,
-    body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-light .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header, body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-dark .workspace-tabs.mod-top .workspace-tab-header-container,
+    body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-light .mod-sidedock.mod-left-split::before,
+    body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-light .mod-sidedock.mod-left-split .workspace-tab-header, body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-dark .workspace-tabs.mod-top .workspace-tab-header-container,
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-dark .sidebar-toggle-button,
-    body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-dark .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header,
+    body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-dark .mod-sidedock.mod-left-split::before,
+    body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused.theme-dark .mod-sidedock.mod-left-split .workspace-tab-header,
     body.adwaita-colors-always.is-focused.theme-light .workspace-tabs.mod-top .workspace-tab-header-container,
     body.adwaita-colors-always.is-focused.theme-light .sidebar-toggle-button,
-    body.adwaita-colors-always.is-focused.theme-light .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header,
+    body.adwaita-colors-always.is-focused.theme-light .mod-sidedock.mod-left-split::before,
+    body.adwaita-colors-always.is-focused.theme-light .mod-sidedock.mod-left-split .workspace-tab-header,
     body.adwaita-colors-always.is-focused.theme-dark .workspace-tabs.mod-top .workspace-tab-header-container,
     body.adwaita-colors-always.is-focused.theme-dark .sidebar-toggle-button,
-    body.adwaita-colors-always.is-focused.theme-dark .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header,
+    body.adwaita-colors-always.is-focused.theme-dark .mod-sidedock.mod-left-split::before,
+    body.adwaita-colors-always.is-focused.theme-dark .mod-sidedock.mod-left-split .workspace-tab-header,
     body.adwaita-colors-linux-only.mod-linux.is-focused.theme-light .workspace-tabs.mod-top .workspace-tab-header-container,
     body.adwaita-colors-linux-only.mod-linux.is-focused.theme-light .sidebar-toggle-button,
-    body.adwaita-colors-linux-only.mod-linux.is-focused.theme-light .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header,
+    body.adwaita-colors-linux-only.mod-linux.is-focused.theme-light .mod-sidedock.mod-left-split::before,
+    body.adwaita-colors-linux-only.mod-linux.is-focused.theme-light .mod-sidedock.mod-left-split .workspace-tab-header,
     body.adwaita-colors-linux-only.mod-linux.is-focused.theme-dark .workspace-tabs.mod-top .workspace-tab-header-container,
     body.adwaita-colors-linux-only.mod-linux.is-focused.theme-dark .sidebar-toggle-button,
-    body.adwaita-colors-linux-only.mod-linux.is-focused.theme-dark .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header {
+    body.adwaita-colors-linux-only.mod-linux.is-focused.theme-dark .mod-sidedock.mod-left-split::before,
+    body.adwaita-colors-linux-only.mod-linux.is-focused.theme-dark .mod-sidedock.mod-left-split .workspace-tab-header {
       --icon-color: var(--adwaita-headerbar-fg-color);
       --icon-color-hover: var(--adwaita-headerbar-fg-color);
       --icon-color-focused: var(--adwaita-headerbar-fg-color);
@@ -379,6 +385,13 @@ body.adwaita-colors-linux-only.mod-linux {
     body.adwaita-colors-linux-only.mod-linux .workspace .workspace-ribbon::before {
       background-color: inherit;
       border-color: var(--sidebar-background); }
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace:not(.is-left-sidedock-open) .side-dock-ribbon,
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace:not(.is-left-sidedock-open) .mod-sidedock.mod-left-split,
+  body.adwaita-colors-always .workspace:not(.is-left-sidedock-open) .side-dock-ribbon,
+  body.adwaita-colors-always .workspace:not(.is-left-sidedock-open) .mod-sidedock.mod-left-split,
+  body.adwaita-colors-linux-only.mod-linux .workspace:not(.is-left-sidedock-open) .side-dock-ribbon,
+  body.adwaita-colors-linux-only.mod-linux .workspace:not(.is-left-sidedock-open) .mod-sidedock.mod-left-split {
+    --sidebar-background: var(--adwaita-view-bg-color); }
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .side-dock-ribbon,
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock,
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .mod-top,
@@ -390,6 +403,7 @@ body.adwaita-colors-linux-only.mod-linux {
   body.adwaita-colors-linux-only.mod-linux .workspace .mod-sidedock .mod-top {
     --tab-container-background: var(--sidebar-background);
     background-color: var(--sidebar-background);
+    transition: background-color 0ms;
     --background-modifier-hover: var(--sidebar-background-modifier-hover); }
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .side-dock-ribbon .workspace-tabs .workspace-tab-header-container,
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .workspace-tabs .workspace-tab-header-container,
@@ -854,6 +868,7 @@ body.adwaita-icons-linux-only.mod-linux {
   body.adwaita-icons-always .mod-sidedock.mod-left-split:before,
   body.adwaita-icons-linux-only.mod-linux .mod-sidedock.mod-left-split:before {
     content: 'Obsidian';
+    color: var(--icon-color);
     padding: 12px;
     padding-right: calc(12px + 43px);
     font-weight: 600;
