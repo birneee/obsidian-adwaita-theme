@@ -17,6 +17,7 @@
               just
               watchexec
               sassc
+              inkscape
             ];
           };
         }
