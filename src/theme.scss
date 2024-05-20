@@ -173,13 +173,19 @@ body {
 body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux, // default if obsidian-style-settings plugin is not used
 body.adwaita-colors-always,
 body.adwaita-colors-linux-only.mod-linux {
-    --titlebar-background: var(--adwaita-headerbar-backdrop-color);
-    --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
-    --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
+    --background-primary: var(--adwaita-view-bg-color);
+    --titlebar-background-focused: var(--adwaita-view-bg-color);
+    --titlebar-text-color-focused: var(--adwaita-view-fg-color);
     --text-normal: var(--adwaita-view-fg-color);
-    &.is-focused {
+    --tab-background-active: var(--sidebar-background);
+    --sidebar-background: var(--adwaita-sidebar-backdrop-color);
+    --sidebar-border-color: var(--adwaita-sidebar-border-color);
+    &.is-focused.theme-light,
+    &.is-focused.theme-dark {
+        --sidebar-background: var(--adwaita-sidebar-bg-color);
         .workspace-tabs.mod-top .workspace-tab-header-container,
-        .sidebar-toggle-button {
+        .sidebar-toggle-button,
+        .workspace-split.mod-horizontal:nth-child(2) .workspace-tab-header {
             --icon-color: var(--adwaita-headerbar-fg-color);
             --icon-color-hover: var(--adwaita-headerbar-fg-color);
             --icon-color-focused: var(--adwaita-headerbar-fg-color);
@@ -197,10 +203,7 @@ body.adwaita-colors-linux-only.mod-linux {
         --tab-text-color-focused-active-current: #8a8a8a;
         --background-modifier-hover: #323232;
         &.is-focused {
-            .workspace-tabs.mod-top .workspace-tab-header-container,
-            .sidebar-toggle-button {
-                --background-modifier-hover: #464646;
-            };
+            --sidebar-background-modifier-hover: #464646;
         }
     }
     &.theme-light {
@@ -213,14 +216,50 @@ body.adwaita-colors-linux-only.mod-linux {
         --tab-text-color-focused-active-current: #939393;
         --background-modifier-hover: #f0f0f0;
         &.is-focused {
-            .workspace-tabs.mod-top .workspace-tab-header-container,
-            .sidebar-toggle-button {
-                --background-modifier-hover: #d8d8d8;
-            };
+            --sidebar-background-modifier-hover: #d8d8d8;
         }
     }
     .titlebar-button.mod-logo:hover {
         background-color: inherit;
+    }
+
+    .mod-root .workspace-tabs {
+        --tab-container-background: var(--background-primary);
+        --tab-outline-color: var(--background-primary);
+    }
+    .workspace {
+        .workspace-ribbon {
+            border-color: var(--sidebar-background);
+            &::before {
+                background-color: inherit;
+                border-color: var(--sidebar-background);
+            }
+        }
+        .side-dock-ribbon,
+        .mod-sidedock,
+        .mod-sidedock .mod-top {
+            --tab-container-background: var(--sidebar-background);
+            background-color: var(--sidebar-background);
+            --background-modifier-hover: var(--sidebar-background-modifier-hover);
+            .workspace-tabs {
+                .workspace-tab-header-container {
+                    background-color: inherit;
+                    border-bottom-color: var(--sidebar-background);
+                }
+                hr.workspace-leaf-resize-handle {
+                    border-bottom-style: dashed;
+                }
+                .workspace-leaf {
+                    background-color: inherit;
+                }
+            }
+        }
+        .mod-sidedock > hr.workspace-leaf-resize-handle {
+            border-color: var(--sidebar-border-color);
+        }
+    }
+    .titlebar-button-container {
+        background-color: inherit!important;
     }
 }
 
@@ -388,27 +427,18 @@ body.adwaita-tabs-linux-only.mod-linux {
         --tab-max-width: none;
     }
 
-    &.theme-dark {
-        --tab-background-active: #323232;
-        &.is-focused {
-            --tab-background-active: #464646;
-        }
-    }
-
-    &.theme-light {
-        --tab-background-active: #f0f0f0;
-        &.is-focused {
-            --tab-background-active: #d8d8d8;
-        }
-    }
-
     .workspace-tab-header-container {
         .workspace-tab-header-container-inner {
             --tab-outline-width: 0;
-        }
+        }        
         .workspace-tab-header-new-tab {
             margin-right: var(--size-4-1);
         }
+    }
+
+    // more space to drag window
+    .mod-root .mod-top .workspace-tab-header-container-inner {
+        padding: 1px 30px 0;
     }
 
     .workspace-tab-header-new-tab {
@@ -443,7 +473,7 @@ body.adwaita-tabs-linux-only.mod-linux {
                 content: none;
             }
         }
-        .workspace-tab-header-inner-close-button {
+        &:not(.is-active) .workspace-tab-header-inner-close-button {
             opacity: 0;
             display: flex;
         }
@@ -548,5 +578,44 @@ body.adwaita-icons-linux-only.mod-linux {
 
     .workspace-tab-header[data-type="search"] .workspace-tab-header-inner-icon {
         @include replace-svg(var(--adwaita-icon-folder-saved-search-symbolic))
+    }
+    
+    .empty-state-container {
+        &::before {
+            content: '';
+            display: inline-block;
+            background-color: #9a9a9a;
+            -webkit-mask-image: var(--adwaita-icon-x-office-document-symbolic);
+            mask-image:  var(--adwaita-icon-x-office-document-symbolic);
+            mask-size: contain;
+            width: 100px;
+            height: 100px;
+        }
+        .empty-state-title {
+            font-weight: 800;
+        }
+        .empty-state-action {
+            color: var(--tab-text-color-focused);
+            font-size: var(--tab-font-size);
+            font-weight: var(--tab-font-weight);
+            border-radius: 4px;
+            padding: 9px 9px;
+            margin-bottom: 6px;
+            line-height: normal;
+            &:hover {
+                color: var(--text-normal);
+                background-color: var(--tab-background-active);
+            }
+        }
+    }
+    .mod-sidedock.mod-left-split {
+        &:before {
+            content: 'Obsidian';
+            padding: 12px;
+            padding-right: calc(12px + 43px);
+            font-weight: 600;
+            display: inline-block;
+            margin: auto;
+        }
     }
 }
