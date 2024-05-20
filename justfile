@@ -1,21 +1,22 @@
 main:
     just css
 
-adw_icon_theme_repo := "https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/raw/43/Adwaita/scalable"
+adw_icon_theme_repo := "https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/raw/master/Adwaita/"
 adw_icon_download_dir := "./build/adw-icons"
 
 adw-icons:
     mkdir -p {{adw_icon_download_dir}}
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/ui/window-close-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/ui/window-maximize-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/ui/window-minimize-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/actions/sidebar-show-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/actions/sidebar-show-right-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/actions/tab-new-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/actions/view-more-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/actions/go-down-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/status/folder-visiting-symbolic.svg"
-    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/places/folder-saved-search-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/ui/window-close-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/ui/window-maximize-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/ui/window-minimize-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/actions/sidebar-show-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/actions/sidebar-show-right-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/actions/tab-new-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/actions/view-more-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/actions/go-down-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/status/folder-visiting-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/places/folder-saved-search-symbolic.svg"
+    - wget -nc -P {{adw_icon_download_dir}} "{{adw_icon_theme_repo}}/symbolic/mimetypes/x-office-document-symbolic.svg"
 
 adw_icons_scss_output := "./generated/_adw_icons.scss"
 
