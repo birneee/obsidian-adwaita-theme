@@ -550,3 +550,10 @@ body.adwaita-icons-linux-only.mod-linux {
         @include replace-svg(var(--adwaita-icon-folder-saved-search-symbolic))
     }
 }
+
+/* Increase <br> spacing in transclusions aka ![[embeds]] */
+.internal-embed br {
+    margin: 1em 0;
+    display: block;
+    content: "";
+}
