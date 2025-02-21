@@ -147,6 +147,29 @@ settings:
             -
                 label: Never
                 value: adwaita-icons-never
+
+    -
+        title: Sidebar
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-sidebar
+        title: Enable
+        description: Whether to use the Adwaita sidebar
+        type: class-select
+        default: adwaita-sidebar-linux-only
+        allowEmpty: false
+        options:
+            -
+                label: Always
+                value: adwaita-sidebar-always
+            -
+                label: Linux Only
+                value: adwaita-sidebar-linux-only
+            -
+                label: Never
+                value: adwaita-sidebar-never
 */
 :root {
   --adwaita-mod-scale: 1;
@@ -425,7 +448,36 @@ body.adwaita-colors-linux-only.mod-linux {
     body.adwaita-colors-linux-only.mod-linux .workspace .side-dock-ribbon .workspace-tabs hr.workspace-leaf-resize-handle,
     body.adwaita-colors-linux-only.mod-linux .workspace .mod-sidedock .workspace-tabs hr.workspace-leaf-resize-handle,
     body.adwaita-colors-linux-only.mod-linux .workspace .mod-sidedock .mod-top .workspace-tabs hr.workspace-leaf-resize-handle {
-      border-bottom-style: dashed; }
+      border: none;
+      display: flex;
+      justify-content: center;
+      opacity: 0.5; }
+      body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .side-dock-ribbon .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .mod-top .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body.adwaita-colors-always .workspace .side-dock-ribbon .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body.adwaita-colors-always .workspace .mod-sidedock .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body.adwaita-colors-always .workspace .mod-sidedock .mod-top .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body.adwaita-colors-linux-only.mod-linux .workspace .side-dock-ribbon .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body.adwaita-colors-linux-only.mod-linux .workspace .mod-sidedock .workspace-tabs hr.workspace-leaf-resize-handle:hover,
+      body.adwaita-colors-linux-only.mod-linux .workspace .mod-sidedock .mod-top .workspace-tabs hr.workspace-leaf-resize-handle:hover {
+        background-color: transparent;
+        opacity: 1; }
+      body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .side-dock-ribbon .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .mod-top .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body.adwaita-colors-always .workspace .side-dock-ribbon .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body.adwaita-colors-always .workspace .mod-sidedock .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body.adwaita-colors-always .workspace .mod-sidedock .mod-top .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body.adwaita-colors-linux-only.mod-linux .workspace .side-dock-ribbon .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body.adwaita-colors-linux-only.mod-linux .workspace .mod-sidedock .workspace-tabs hr.workspace-leaf-resize-handle::before,
+      body.adwaita-colors-linux-only.mod-linux .workspace .mod-sidedock .mod-top .workspace-tabs hr.workspace-leaf-resize-handle::before {
+        content: '';
+        height: 2px;
+        width: calc(100% - 20px);
+        position: absolute;
+        background-color: var(--adwaita-mod-foreground);
+        border-radius: 1px; }
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .side-dock-ribbon .workspace-tabs .workspace-leaf,
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .workspace-tabs .workspace-leaf,
     body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux .workspace .mod-sidedock .mod-top .workspace-tabs .workspace-leaf,
@@ -605,7 +657,7 @@ body.adwaita-mod-linux-only.mod-linux {
 body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux,
 body.adwaita-tabs-always,
 body.adwaita-tabs-linux-only.mod-linux {
-  --tab-radius-active: 4px; }
+  --tab-radius-active: 6px; }
   body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux:not(.adwaita-tabs-short),
   body.adwaita-tabs-always:not(.adwaita-tabs-short),
   body.adwaita-tabs-linux-only.mod-linux:not(.adwaita-tabs-short) {
@@ -620,10 +672,15 @@ body.adwaita-tabs-linux-only.mod-linux {
   body.adwaita-tabs-always .workspace-tab-header-container .workspace-tab-header-new-tab,
   body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-container .workspace-tab-header-new-tab {
     margin-right: var(--size-4-1); }
-  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .mod-top .workspace-tab-header-container-inner,
-  body.adwaita-tabs-always .mod-root .mod-top .workspace-tab-header-container-inner,
-  body.adwaita-tabs-linux-only.mod-linux .mod-root .mod-top .workspace-tab-header-container-inner {
-    padding: 1px 30px 0; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header-container,
+  body.adwaita-tabs-always .mod-root .workspace-tab-header-container,
+  body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header-container {
+    z-index: 2;
+    margin-left: 80px; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tab-header-container .workspace-tab-header-container-inner,
+    body.adwaita-tabs-always .mod-root .workspace-tab-header-container .workspace-tab-header-container-inner,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tab-header-container .workspace-tab-header-container-inner {
+      padding: 1px 30px 0 0; }
   body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .workspace-tab-header-new-tab,
   body.adwaita-tabs-always .workspace-tab-header-new-tab,
   body.adwaita-tabs-linux-only.mod-linux .workspace-tab-header-new-tab {
@@ -674,6 +731,24 @@ body.adwaita-tabs-linux-only.mod-linux {
     body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header.is-active .workspace-tab-header-inner-close-button,
     body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-header :hover .workspace-tab-header-inner-close-button {
       opacity: 1; }
+  body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container,
+  body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container,
+  body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container {
+    margin-top: -46px; }
+    body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container .workspace-leaf-content,
+    body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container .workspace-leaf-content,
+    body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container .workspace-leaf-content {
+      margin-top: 46px;
+      overflow: visible; }
+      body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container .workspace-leaf-content .view-header-left,
+      body.adwaita-tabs-always .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container .workspace-leaf-content .view-header-left,
+      body.adwaita-tabs-linux-only.mod-linux .mod-root .workspace-tabs:not(.mod-stacked) .workspace-tab-container .workspace-leaf-content .view-header-left {
+        app-region: drag;
+        margin-top: -46px;
+        margin-left: -21px;
+        padding-left: 21px;
+        height: 46px;
+        padding-right: 21px; }
 
 body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux,
 body.adwaita-font-always,
@@ -864,13 +939,15 @@ body.adwaita-icons-linux-only.mod-linux {
     body.adwaita-icons-linux-only.mod-linux .empty-state-container .empty-state-action:hover {
       color: var(--text-normal);
       background-color: var(--tab-background-active); }
-  body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux .mod-sidedock.mod-left-split:before,
-  body.adwaita-icons-always .mod-sidedock.mod-left-split:before,
-  body.adwaita-icons-linux-only.mod-linux .mod-sidedock.mod-left-split:before {
-    content: 'Obsidian';
-    color: var(--icon-color);
-    padding: 12px;
-    padding-right: calc(12px + 43px);
-    font-weight: 600;
-    display: inline-block;
-    margin: auto; }
+
+body:not(.adwaita-sidebar-always, .adwaita-sidebar-linux-only, .adwaita-sidebar-never).mod-linux .mod-sidedock.mod-left-split:before,
+body.adwaita-sidebar-always .mod-sidedock.mod-left-split:before,
+body.adwaita-sidebar-linux-only.mod-linux .mod-sidedock.mod-left-split:before {
+  content: 'Obsidian';
+  color: var(--icon-color);
+  padding: 12px;
+  padding-right: calc(12px + 43px);
+  font-weight: 600;
+  display: inline-block;
+  margin: auto;
+  app-region: drag; }

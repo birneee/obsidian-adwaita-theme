@@ -146,6 +146,29 @@ settings:
             -
                 label: Never
                 value: adwaita-icons-never
+
+    -
+        title: Sidebar
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-sidebar
+        title: Enable
+        description: Whether to use the Adwaita sidebar
+        type: class-select
+        default: adwaita-sidebar-linux-only
+        allowEmpty: false
+        options:
+            -
+                label: Always
+                value: adwaita-sidebar-always
+            -
+                label: Linux Only
+                value: adwaita-sidebar-linux-only
+            -
+                label: Never
+                value: adwaita-sidebar-never
 */
 
 :root {
@@ -257,7 +280,22 @@ body.adwaita-colors-linux-only.mod-linux {
                     border-bottom-color: var(--sidebar-background);
                 }
                 hr.workspace-leaf-resize-handle {
-                    border-bottom-style: dashed;
+                    border: none;
+                    display: flex;
+                    justify-content: center;
+                    opacity: 0.5;
+                    &:hover {
+                        background-color: transparent;
+                        opacity: 1;
+                    }
+                    &::before {
+                        content: '';
+                        height: 2px;
+                        width: calc(100% - 20px);
+                        position:absolute;
+                        background-color: var(--adwaita-mod-foreground);
+                        border-radius: 1px;
+                    }
                 }
                 .workspace-leaf {
                     background-color: inherit;
@@ -430,7 +468,7 @@ body.adwaita-mod-linux-only.mod-linux {
 body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux, // default if obsidian-style-settings plugin is not used
 body.adwaita-tabs-always,
 body.adwaita-tabs-linux-only.mod-linux {
-    --tab-radius-active: 4px;
+    --tab-radius-active: 6px;
 
     &:not(.adwaita-tabs-short) {
         --tab-width: 10000px; /* infinite width */
@@ -446,9 +484,15 @@ body.adwaita-tabs-linux-only.mod-linux {
         }
     }
 
-    // more space to drag window
-    .mod-root .mod-top .workspace-tab-header-container-inner {
-        padding: 1px 30px 0;
+    .mod-root {
+        .workspace-tab-header-container {
+            z-index: 2;
+            margin-left: 80px;
+            // more space to drag window
+            .workspace-tab-header-container-inner {
+                padding: 1px 30px 0 0;
+            }
+        }
     }
 
     .workspace-tab-header-new-tab {
@@ -490,6 +534,24 @@ body.adwaita-tabs-linux-only.mod-linux {
         &.is-active, :hover {
             .workspace-tab-header-inner-close-button {
                 opacity: 1;
+            }
+        }
+    }
+
+    .mod-root .workspace-tabs:not(.mod-stacked) {
+        .workspace-tab-container {
+            margin-top: -46px;
+            .workspace-leaf-content {
+                margin-top: 46px;
+                overflow: visible;
+                .view-header-left {
+                    app-region: drag;
+                    margin-top: -46px;
+                    margin-left: -21px;
+                    padding-left: 21px;
+                    height: 46px;
+                    padding-right: 21px;
+                }
             }
         }
     }
@@ -618,6 +680,13 @@ body.adwaita-icons-linux-only.mod-linux {
             }
         }
     }
+   
+}
+
+// Adwaita sidebar
+body:not(.adwaita-sidebar-always, .adwaita-sidebar-linux-only, .adwaita-sidebar-never).mod-linux, // default if obsidian-style-settings plugin is not used
+body.adwaita-sidebar-always,
+body.adwaita-sidebar-linux-only.mod-linux {
     .mod-sidedock.mod-left-split {
         &:before {
             content: 'Obsidian';
@@ -627,6 +696,7 @@ body.adwaita-icons-linux-only.mod-linux {
             font-weight: 600;
             display: inline-block;
             margin: auto;
+            app-region: drag;
         }
     }
 }
