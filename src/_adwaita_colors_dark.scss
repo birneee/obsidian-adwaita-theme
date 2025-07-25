@@ -2,7 +2,7 @@
 
 @mixin adwaita-colors-dark {
     --adwaita-accent-color: #78aeed;
-    --adwaita-accent-bg-color: #3584e4;
+    --adwaita-accent-bg-color: #78aeed;
     --adwaita-accent-fg-color: #ffffff;
 
     --adwaita-destructive-color: #ff7b63;
@@ -21,30 +21,31 @@
     --adwaita-error-bg-color: #c01c28;
     --adwaita-error-fg-color: #ffffff;
 
-    --adwaita-window-bg-color: #242424;
+    --adwaita-window-bg-color: #222226;
     --adwaita-window-fg-color: #ffffff;
 
-    --adwaita-view-bg-color: #1e1e1e;
+    --adwaita-view-bg-color: #222226;
     --adwaita-view-fg-color: #ffffff;
 
-    --adwaita-headerbar-bg-color: #303030;
+    --adwaita-headerbar-bg-color: #2e2e32;
     --adwaita-headerbar-fg-color: #ffffff;
 
-    --adwaita-headerbar-border-color: #ffffff;
-    --adwaita-headerbar-backdrop-color: #242424;
-    --adwaita-headerbar-shade-color: rgba(0, 0, 0, 0.36);
+    --adwaita-headerbar-border-color: rgba(0, 0, 0, 0.9);
+    --adwaita-headerbar-backdrop-color: #222226;
+    --adwaita-headerbar-shade-color: rgba(0, 0, 0, 0.9);
 
     --adwaita-card-bg-color: rgba(255, 255, 255, 0.08);
     --adwaita-card-fg-color: #ffffff;
-    --adwaita-card-shade-color: rgba(0, 0, 0, 0.36);
+    --adwaita-card-shade-color: rgba(0, 0, 6, 0.36);
 
-    --adwaita-dialog-bg-color: #383838;
+    --adwaita-dialog-bg-color: #36363a;
     --adwaita-dialog-fg-color: #ffffff;
 
-    --adwaita-popover-bg-color: #383838;
+    --adwaita-popover-bg-color: #36363a;
     --adwaita-popover-fg-color: #ffffff;
     --adwaita-popover-shader-color: rgba(0, 0, 0, 0.36);
 
     --adwaita-shade-color: rgba(0, 0, 0, 0.36);
     --adwaita-scrollbar-outline-color: rgba(0, 0, 0, 0.5);
+}
 }
