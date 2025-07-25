@@ -1,7 +1,7 @@
 main:
     just css
 
-adw_icon_theme_repo := "https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/raw/43/Adwaita/scalable"
+adw_icon_theme_repo := "https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/tree/master/Adwaita/symbolic"
 adw_icon_download_dir := "./build/adw-icons"
 
 adw-icons:
