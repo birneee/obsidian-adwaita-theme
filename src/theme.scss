@@ -10,34 +10,11 @@ settings:
         level: 2
         collapsed: false
     -
-        id: adwaita-mod
+        id: adwaita-window-buttons
         title: Enable
         description: Whether to use the Adwaita style window buttons
-        type: class-select
-        default: adwaita-mod-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-mod-always
-            -
-                label: Linux Only
-                value: adwaita-mod-linux-only
-            -
-                label: Never
-                value: adwaita-mod-never
-    -
-        id: adwaita-mod-scale
-        title: Scale
-        description:
-        type: variable-number
-        default: 1
-    -
-        id: adwaita-mod-right-margin
-        title: Right Margin
-        type: variable-number
-        default: 8
-        format: px
+        type: class-toggle
+        default: true
     -
         id: adwaita-window-button-minimize-hide
         title: Hide minimize button
@@ -50,125 +27,6 @@ settings:
         id: adwaita-window-button-close-hide
         title: Hide close button
         type: class-toggle
-
-    -
-        title: Tabs
-        type: heading
-        level: 2
-        collapsed: false
-    -
-        id: adwaita-tabs
-        title: Enable
-        description: Whether to use the Adwaita style tabs
-        type: class-select
-        default: adwaita-tabs-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-tabs-always
-            -
-                label: Linux Only
-                value: adwaita-tabs-linux-only
-            -
-                label: Never
-                value: adwaita-tabs-never
-    -
-        id: adwaita-tabs-short
-        title: Short
-        type: class-toggle
-
-    -
-        title: Colors
-        type: heading
-        level: 2
-        collapsed: false
-    -
-        id: adwaita-colors
-        title: Enable
-        description: Whether to use the Adwaita colors
-        type: class-select
-        default: adwaita-colors-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-colors-always
-            -
-                label: Linux Only
-                value: adwaita-colors-linux-only
-            -
-                label: Never
-                value: adwaita-colors-never
-
-    -
-        title: Font
-        type: heading
-        level: 2
-        collapsed: false
-    -
-        id: adwaita-font
-        title: Enable
-        description: Whether to use the Cantarell font (must be installed on system)
-        type: class-select
-        default: adwaita-font-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-font-always
-            -
-                label: Linux Only
-                value: adwaita-font-linux-only
-            -
-                label: Never
-                value: adwaita-font-never
-
-    -
-        title: Icons
-        type: heading
-        level: 2
-        collapsed: false
-    -
-        id: adwaita-icon
-        title: Enable
-        description: Whether to use the Adwaita icons
-        type: class-select
-        default: adwaita-icons-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-icons-always
-            -
-                label: Linux Only
-                value: adwaita-icons-linux-only
-            -
-                label: Never
-                value: adwaita-icons-never
-
-    -
-        title: Sidebar
-        type: heading
-        level: 2
-        collapsed: false
-    -
-        id: adwaita-sidebar
-        title: Enable
-        description: Whether to use the Adwaita sidebar
-        type: class-select
-        default: adwaita-sidebar-linux-only
-        allowEmpty: false
-        options:
-            -
-                label: Always
-                value: adwaita-sidebar-always
-            -
-                label: Linux Only
-                value: adwaita-sidebar-linux-only
-            -
-                label: Never
-                value: adwaita-sidebar-never
 */
 
 :root {
@@ -193,9 +51,7 @@ body {
 }
 
 // Adwaita colors
-body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-colors-always,
-body.adwaita-colors-linux-only.mod-linux {
+body {
     --background-primary: var(--adwaita-view-bg-color);
     --titlebar-background-focused: var(--adwaita-view-bg-color);
     --titlebar-text-color-focused: var(--adwaita-view-fg-color);
@@ -312,9 +168,8 @@ body.adwaita-colors-linux-only.mod-linux {
 }
 
 // Adwaita window mod buttons
-body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-mod-always,
-body.adwaita-mod-linux-only.mod-linux {
+body:not(.css-settings-manager), // enable if obsidian-style-settings plugin is not used
+body.adwaita-window-buttons {
     --frame-right-space: calc(var(--adwaita-mod-scale) * 120px);
     --adwaita-mod-foreground-focus: var(--adwaita-headerbar-fg-color);
 
@@ -465,9 +320,7 @@ body.adwaita-mod-linux-only.mod-linux {
 
 
 // Adwaita tabs
-body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-tabs-always,
-body.adwaita-tabs-linux-only.mod-linux {
+body {
     --tab-radius-active: 6px;
 
     &:not(.adwaita-tabs-short) {
@@ -529,7 +382,7 @@ body.adwaita-tabs-linux-only.mod-linux {
         }
         &:not(.is-active) .workspace-tab-header-inner-close-button {
             opacity: 0;
-            display: flex;
+            display: flex!important;
         }
         &.is-active, :hover {
             .workspace-tab-header-inner-close-button {
@@ -558,9 +411,7 @@ body.adwaita-tabs-linux-only.mod-linux {
 }
 
 // Adwaita font
-body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-font-always,
-body.adwaita-font-linux-only.mod-linux {    
+body {
     --titlebar-height: 45px;
     --font-interface-theme: Cantarell;
     --font-ui-small: 15px;
@@ -572,9 +423,7 @@ body.adwaita-font-linux-only.mod-linux {
 }
 
 // Adwaita icons
-body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-icons-always,
-body.adwaita-icons-linux-only.mod-linux {
+body {
     --titlebar-height: 45px;
     --header-height: 46px;
 
@@ -681,22 +530,4 @@ body.adwaita-icons-linux-only.mod-linux {
         }
     }
    
-}
-
-// Adwaita sidebar
-body:not(.adwaita-sidebar-always, .adwaita-sidebar-linux-only, .adwaita-sidebar-never).mod-linux, // default if obsidian-style-settings plugin is not used
-body.adwaita-sidebar-always,
-body.adwaita-sidebar-linux-only.mod-linux {
-    .mod-sidedock.mod-left-split {
-        &:before {
-            content: 'Obsidian';
-            color: var(--icon-color);
-            padding: 12px;
-            padding-right: calc(12px + 43px);
-            font-weight: 600;
-            display: inline-block;
-            margin: auto;
-            app-region: drag;
-        }
-    }
 }
