@@ -6,10 +6,6 @@ This is an [Obisidian](https://obsidian.md/) theme in the style of [Gnome](https
 
 ## Features 
 
-<table>
-<tr>
-<td>
-
 ### Window Buttons
 <img src="generated/compare-window-buttons.png">
 
@@ -21,9 +17,6 @@ This is an [Obisidian](https://obsidian.md/) theme in the style of [Gnome](https
 
 ### Dark and Light Theme
 Change under `Settings > Options > Appearance > Base color scheme`.
-
-</td>
-<td>
 
 ### Colors
 <img src="generated/compare-color.png">
@@ -37,9 +30,6 @@ For customization see [Style Settings](#style-settings).
 ### TBD Rounded Window Corners
 As a workaround use the [Rounded Window Corners](https://extensions.gnome.org/extension/5237/rounded-window-corners/) Gnome Extension.
 
-</td>
-</tr>
-</table>
 
 ## Installation
 
@@ -49,11 +39,10 @@ As a workaround use the [Rounded Window Corners](https://extensions.gnome.org/ex
 3. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
 
 ### Automatic
-1. Install [just](https://github.com/casey/just)
-2. Set `OBSIDIAN_HOME` environment variable to your vault path
-3. run `just install`
-4. In Obsidian go to `Settings > Options > Appearance > Themes` and select the `Adwaita` theme
-5. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
+1. Set `OBSIDIAN_HOME` environment variable to your vault path
+2. run `make install`
+3. In Obsidian go to `Settings > Options > Appearance > Themes` and select the `Adwaita` theme
+4. Optionally install the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings) for customization. Adjust under `Settings > Community Plugins > Style Settings > Adwaita`
 
 ### Manual
 
@@ -64,14 +53,12 @@ As a workaround use the [Rounded Window Corners](https://extensions.gnome.org/ex
 
 ## Build
 
-- Install [just](https://github.com/casey/just) and [sassc](https://github.com/sass/sassc)
-- Run `just`
+- Install [sassc](https://github.com/sass/sassc)
+- Run `make`
 
 ## Style Settings
 Requires the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings).
 Adjust under `Settings > Community Plugins > Style Settings > Adwaita`.
-
-![](src/preview/style-settings.png)
 
 ## Contribution
 Feel free to create Issues and Pull Requests.
