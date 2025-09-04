@@ -181,6 +181,11 @@ body {
                 .workspace-leaf {
                     background-color: inherit;
                 }
+                &:last-child {
+                    hr.workspace-leaf-resize-handle {
+                        display: none;
+                    }
+                }
             }
         }
         .mod-sidedock > hr.workspace-leaf-resize-handle {
@@ -366,9 +371,12 @@ body {
         .workspace-tab-header-container {
             z-index: 2;
             margin-left: 80px;
-            // more space to drag window
-            .workspace-tab-header-container-inner {
-                padding: 1px 30px 0 0;
+        }
+        .mod-top {
+            .workspace-tab-header-container {
+                .workspace-tab-header-container-inner {
+                    padding: 1px 30px 0 19px; // more space to drag window
+                }
             }
         }
     }

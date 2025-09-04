@@ -280,6 +280,10 @@ body {
     body .workspace .mod-sidedock .workspace-tabs .workspace-leaf,
     body .workspace .mod-sidedock .mod-top .workspace-tabs .workspace-leaf {
       background-color: inherit; }
+    body .workspace .side-dock-ribbon .workspace-tabs:last-child hr.workspace-leaf-resize-handle,
+    body .workspace .mod-sidedock .workspace-tabs:last-child hr.workspace-leaf-resize-handle,
+    body .workspace .mod-sidedock .mod-top .workspace-tabs:last-child hr.workspace-leaf-resize-handle {
+      display: none; }
   body .workspace .mod-sidedock > hr.workspace-leaf-resize-handle {
     border-color: var(--sidebar-border-color); }
   body .titlebar-button-container {
@@ -423,8 +427,8 @@ body {
   body .mod-root .workspace-tab-header-container {
     z-index: 2;
     margin-left: 80px; }
-    body .mod-root .workspace-tab-header-container .workspace-tab-header-container-inner {
-      padding: 1px 30px 0 0; }
+  body .mod-root .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
+    padding: 1px 30px 0 19px; }
   body .workspace-tab-header-new-tab {
     order: 1; }
   body .workspace-tab-header-tab-list,

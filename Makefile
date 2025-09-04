@@ -21,7 +21,7 @@ ADW_ICON_FILES := $(notdir $(ADW_ICONS))
 
 theme.css: src/theme.scss generated/_adw_icons.scss
 	sassc src/theme.scss theme.css
-	printf '%s\n%s\n' "/* This file is generated; DO NOT EDIT. */" "$$(cat theme.css)" > theme.css
+	@printf '%s\n%s\n' "/* This file is generated; DO NOT EDIT. */" "$$(cat theme.css)" > theme.css
 
 # Rule to download individual icons (flat structure)
 build/adw-icons/%:
