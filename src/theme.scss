@@ -170,119 +170,121 @@ body {
 }
 
 // Adwaita colors
-body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux, // default if obsidian-style-settings plugin is not used
+body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux,
 body.adwaita-colors-always,
 body.adwaita-colors-linux-only.mod-linux {
-    --titlebar-background: var(--adwaita-headerbar-backdrop-color);
-    --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
-    --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
-    --text-normal: var(--adwaita-view-fg-color);
+    // Light theme (default)
+    --titlebar-background: #fafafb;
+    --titlebar-background-focused: #ffffff;
+    --titlebar-text-color-focused: rgba(0, 0, 6, 0.8);
+    --text-normal: rgba(0, 0, 6, 0.8);
+
     &.is-focused {
         .workspace-tabs.mod-top .workspace-tab-header-container,
         .sidebar-toggle-button {
-            --icon-color: var(--adwaita-headerbar-fg-color);
-            --icon-color-hover: var(--adwaita-headerbar-fg-color);
-            --icon-color-focused: var(--adwaita-headerbar-fg-color);
-            --tab-text-color-focused: var(--adwaita-headerbar-fg-color);
-            --tab-text-color-focused-active-current: var(--adwaita-headerbar-fg-color);
-        };
+            --icon-color: rgba(0, 0, 6, 0.8);
+            --icon-color-hover: rgba(0, 0, 6, 0.8);
+            --icon-color-focused: rgba(0, 0, 6, 0.8);
+            --tab-text-color-focused: rgba(0, 0, 6, 0.8);
+            --tab-text-color-focused-active-current: rgba(0, 0, 6, 0.8);
+        }
     }
-    &.theme-dark  {
-        --titlebar-text-color: #919191;
-        --icon-color: #929292;
-        --icon-color-hover: #929292;
-        --icon-color-focused: #929292;
-        --tab-text-color: #929292;
-        --tab-text-color-focused: #8a8a8a;
-        --tab-text-color-focused-active-current: #8a8a8a;
-        --background-modifier-hover: #323232;
+
+    &.theme-dark {
+        --titlebar-text-color: white;
+        --icon-color: white;
+        --icon-color-hover: white;
+        --icon-color-focused: white;
+        --tab-text-color: white;
+        --tab-text-color-focused: white;
+        --tab-text-color-focused-active-current: white;
+        --background-modifier-hover: rgba(0, 0, 6, 0.25);
         &.is-focused {
             .workspace-tabs.mod-top .workspace-tab-header-container,
             .sidebar-toggle-button {
-                --background-modifier-hover: #464646;
-            };
+                --background-modifier-hover: rgba(0, 0, 6, 0.36);
+            }
         }
     }
+
     &.theme-light {
-        --titlebar-text-color: #8c8c8c;
-        --icon-color: #939393;
-        --icon-color-hover: #939393;
-        --icon-color-focused: #939393;
-        --tab-text-color: #939393;
-        --tab-text-color-focused: #939393;
-        --tab-text-color-focused-active-current: #939393;
-        --background-modifier-hover: #f0f0f0;
+        --titlebar-text-color: rgba(0, 0, 6, 0.8);
+        --icon-color: rgba(0, 0, 6, 0.8);
+        --icon-color-hover: rgba(0, 0, 6, 0.8);
+        --icon-color-focused: rgba(0, 0, 6, 0.8);
+        --tab-text-color: rgba(0, 0, 6, 0.8);
+        --tab-text-color-focused: rgba(0, 0, 6, 0.8);
+        --tab-text-color-focused-active-current: rgba(0, 0, 6, 0.8);
+        --background-modifier-hover: rgba(0, 0, 6, 0.07);
         &.is-focused {
             .workspace-tabs.mod-top .workspace-tab-header-container,
             .sidebar-toggle-button {
-                --background-modifier-hover: #d8d8d8;
-            };
+                --background-modifier-hover: rgba(0, 0, 6, 0.07);
+            }
         }
     }
+
     .titlebar-button.mod-logo:hover {
         background-color: inherit;
     }
 }
 
-// Adwaita window mod buttons
-body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux, // default if obsidian-style-settings plugin is not used
+// Adwaita window mod buttons (with actual hex values)
+body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux,
 body.adwaita-mod-always,
 body.adwaita-mod-linux-only.mod-linux {
     --frame-right-space: calc(var(--adwaita-mod-scale) * 120px);
-    --adwaita-mod-foreground-focus: var(--adwaita-headerbar-fg-color);
+    --adwaita-mod-foreground-focus: rgb(0 0 6 / 80%);
 
     &.theme-dark {
-        --adwaita-mod-background: #2e2e2e;
+        --adwaita-mod-background: #2e2e32;
         --adwaita-mod-background-focus: #444444;
         --adwaita-mod-background-hover: #4f4f4f;
         --adwaita-mod-background-active: #6e6e6e;
-        --adwaita-mod-foreground: #929292;
+        --adwaita-mod-foreground: white;
     }
-    
+
     &.theme-light {
-        --adwaita-mod-background: #efefef;
+        --adwaita-mod-background: #ffffff;
         --adwaita-mod-background-focus: #d8d8d8;
         --adwaita-mod-background-hover: #cfcfcf;
         --adwaita-mod-background-active: #b3b3b3;
-        --adwaita-mod-foreground: #949494;
+        --adwaita-mod-foreground: rgb(0 0 6 / 80%);
     }
 
-    &.adwaita-window-button-minimize-hide .titlebar-button-container.mod-right .titlebar-button.mod-minimize{
-        display: none
+    &.adwaita-window-button-minimize-hide .titlebar-button-container.mod-right .titlebar-button.mod-minimize {
+        display: none;
     }
 
-    &.adwaita-window-button-maximize-hide .titlebar-button-container.mod-right .titlebar-button.mod-maximize{
-        display: none
+    &.adwaita-window-button-maximize-hide .titlebar-button-container.mod-right .titlebar-button.mod-maximize {
+        display: none;
     }
 
-    &.adwaita-window-button-close-hide .titlebar-button-container.mod-right .titlebar-button.mod-close{
-        display: none
+    &.adwaita-window-button-close-hide .titlebar-button-container.mod-right .titlebar-button.mod-close {
+        display: none;
     }
-
-
 
     &.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide),
     &.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide),
-    &.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide){
+    &.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide) {
         --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px));
     }
 
     &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide),
     &.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide),
-    &.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide){
+    &.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide) {
         --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px));
     }
 
-    &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide{
+    &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide {
         --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px - 38px));
     }
-
 
     .titlebar-button-container.mod-right {
         transform: scale(var(--adwaita-mod-scale));
         margin-right: var(--adwaita-mod-right-margin);
         transform-origin: right;
-    
+
         .titlebar-button {
             height: 24px;
             width: 24px;
@@ -292,7 +294,7 @@ body.adwaita-mod-linux-only.mod-linux {
 
             background: var(--adwaita-mod-background);
             color: var(--adwaita-mod-foreground);
-    
+
             &.mod-minimize,
             &.mod-maximize,
             &.mod-close {
@@ -300,7 +302,7 @@ body.adwaita-mod-linux-only.mod-linux {
                     display: none;
                 }
             }
-    
+
             &::after {
                 content: '';
                 background-color: currentColor;
@@ -308,26 +310,30 @@ body.adwaita-mod-linux-only.mod-linux {
                 height: 16px;
                 margin: auto;
             }
-    
+
             &.mod-minimize::after {
                 -webkit-mask-image: var(--adwaita-icon-window-minimize-symbolic);
                 mask-image: var(--adwaita-icon-window-minimize-symbolic);
             }
-    
+
             &.mod-maximize::after {
                 -webkit-mask-image: var(--adwaita-icon-window-maximize-symbolic);
                 mask-image: var(--adwaita-icon-window-maximize-symbolic);
             }
-    
+
             &.mod-close::after {
                 -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
                 mask-image: var(--adwaita-icon-window-close-symbolic);
             }
-    
+
             &:hover {
-                background: var(--adwaita-mod-background)!important;
+                background: var(--adwaita-mod-background-hover) !important;
             }
-    
+
+            &:active {
+                background: var(--adwaita-mod-background-active) !important;
+            }
+
             svg {
                 width: 12px;
                 height: 12px;
@@ -335,18 +341,19 @@ body.adwaita-mod-linux-only.mod-linux {
             }
         }
     }
+
     &.is-focused {
         .titlebar-button-container.mod-right .titlebar-button,
         .modal-close-button {
             background: var(--adwaita-mod-background-focus);
             color: var(--adwaita-mod-foreground-focus);
-        
+
             &:hover {
-                background: var(--adwaita-mod-background-hover)!important;
+                background: var(--adwaita-mod-background-hover) !important;
             }
-        
+
             &:active {
-                background: var(--adwaita-mod-background-active)!important;
+                background: var(--adwaita-mod-background-active) !important;
             }
         }
     }
@@ -359,7 +366,7 @@ body.adwaita-mod-linux-only.mod-linux {
         background: var(--adwaita-mod-background);
         transform: scale(var(--adwaita-mod-scale));
         transform-origin: right;
-    
+
         &:before {
             content: '';
             display: block;
@@ -376,15 +383,14 @@ body.adwaita-mod-linux-only.mod-linux {
     }
 }
 
-
 // Adwaita tabs
-body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux, // default if obsidian-style-settings plugin is not used
+body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux,
 body.adwaita-tabs-always,
 body.adwaita-tabs-linux-only.mod-linux {
     --tab-radius-active: 4px;
 
     &:not(.adwaita-tabs-short) {
-        --tab-width: 10000px; /* infinite width */
+        --tab-width: 10000px;
         --tab-max-width: none;
     }
 
@@ -456,7 +462,7 @@ body.adwaita-tabs-linux-only.mod-linux {
 }
 
 // Adwaita font
-body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux, // default if obsidian-style-settings plugin is not used
+body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux,
 body.adwaita-font-always,
 body.adwaita-font-linux-only.mod-linux {    
     --titlebar-height: 45px;
@@ -470,7 +476,7 @@ body.adwaita-font-linux-only.mod-linux {
 }
 
 // Adwaita icons
-body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux, // default if obsidian-style-settings plugin is not used
+body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux,
 body.adwaita-icons-always,
 body.adwaita-icons-linux-only.mod-linux {
     --titlebar-height: 45px;
