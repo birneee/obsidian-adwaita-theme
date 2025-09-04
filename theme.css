@@ -246,8 +246,9 @@ body {
   body .workspace .mod-sidedock,
   body .workspace .mod-sidedock .mod-top {
     --tab-container-background: var(--sidebar-background);
-    background-color: var(--sidebar-background);
-    transition: background-color 0ms;
+    background-color: var(--sidebar-background) !important;
+    transition: background-color 0ms !important;
+    border-right: none;
     --background-modifier-hover: var(--sidebar-background-modifier-hover); }
     body .workspace .side-dock-ribbon .workspace-tabs .workspace-tab-header-container,
     body .workspace .mod-sidedock .workspace-tabs .workspace-tab-header-container,

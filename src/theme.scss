@@ -151,8 +151,9 @@ body {
         .mod-sidedock,
         .mod-sidedock .mod-top {
             --tab-container-background: var(--sidebar-background);
-            background-color: var(--sidebar-background);
-            transition: background-color 0ms;
+            background-color: var(--sidebar-background)!important;
+            transition: background-color 0ms!important;
+            border-right: none;
             --background-modifier-hover: var(--sidebar-background-modifier-hover);
             .workspace-tabs {
                 .workspace-tab-header-container {
