@@ -2,17 +2,19 @@ ADW_ICON_THEME_REPO := "https://gitlab.gnome.org/GNOME/adwaita-icon-theme/-/raw/
 
 # List of icons (repo paths)
 ADW_ICONS := \
-	/symbolic/ui/window-close-symbolic.svg \
-	/symbolic/ui/window-maximize-symbolic.svg \
-	/symbolic/ui/window-minimize-symbolic.svg \
-	/symbolic/actions/sidebar-show-symbolic.svg \
-	/symbolic/actions/sidebar-show-right-symbolic.svg \
-	/symbolic/actions/tab-new-symbolic.svg \
-	/symbolic/actions/view-more-symbolic.svg \
-	/symbolic/actions/go-down-symbolic.svg \
-	/symbolic/status/folder-visiting-symbolic.svg \
-	/symbolic/places/folder-saved-search-symbolic.svg \
-	/symbolic/mimetypes/x-office-document-symbolic.svg
+	symbolic/actions/go-down-symbolic.svg \
+	symbolic/actions/go-next-symbolic.svg \
+	symbolic/actions/go-previous-symbolic.svg \
+	symbolic/actions/sidebar-show-right-symbolic.svg \
+	symbolic/actions/sidebar-show-symbolic.svg \
+	symbolic/actions/tab-new-symbolic.svg \
+	symbolic/actions/view-more-symbolic.svg \
+	symbolic/mimetypes/x-office-document-symbolic.svg \
+	symbolic/places/folder-saved-search-symbolic.svg \
+	symbolic/status/folder-visiting-symbolic.svg \
+	symbolic/ui/window-close-symbolic.svg \
+	symbolic/ui/window-maximize-symbolic.svg \
+	symbolic/ui/window-minimize-symbolic.svg
 
 # Filenames only (flat directory)
 ADW_ICON_FILES := $(notdir $(ADW_ICONS))

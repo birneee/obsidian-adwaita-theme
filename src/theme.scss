@@ -40,6 +40,21 @@ settings:
 @import 'adwaita_colors_light';
 @import 'adwaita_colors';
 
+@mixin replace-svg($icon-url) {
+    svg {
+        display: none;
+    }
+    &::after {
+        content: '';
+        background-color: currentColor!important;
+        -webkit-mask-image: $icon-url;
+        mask-image: $icon-url;
+        width: 16px;
+        height: 16px;
+        margin: auto;
+    }
+}
+
 body {
     @include adwaita-colors;
     &.theme-dark {
@@ -404,6 +419,14 @@ body {
                     padding-left: 21px;
                     height: 46px;
                     padding-right: 21px;
+                    .view-header-nav-buttons {
+                        button:nth-child(1) {
+                            @include replace-svg(var(--adwaita-icon-go-previous-symbolic)); 
+                        }
+                        button:nth-child(2) {
+                            @include replace-svg(var(--adwaita-icon-go-next-symbolic));
+                        }
+                    }
                 }
             }
         }
@@ -438,21 +461,6 @@ body {
         }
     }
 
-    @mixin replace-svg($icon-url) {
-        svg {
-            display: none;
-        }
-        &::after {
-            content: '';
-            background-color: currentColor!important;
-            -webkit-mask-image: $icon-url;
-            mask-image: $icon-url;
-            width: 16px;
-            height: 16px;
-            margin: auto;
-        }
-    }
-
     .sidebar-toggle-button,
     .workspace-tab-header-new-tab,
     .workspace-tab-header-tab-list,
@@ -466,6 +474,7 @@ body {
     .mod-left-split .workspace-tabs .workspace-tab-header,
     .mod-right-split .workspace-tabs .workspace-tab-header,
     .sidebar-toggle-button .clickable-icon,
+    .mod-top .view-header-nav-buttons .clickable-icon,
     .workspace-tabs.mod-top .workspace-tab-header-container .clickable-icon {
         height: 34px;
         min-width: 34px;
