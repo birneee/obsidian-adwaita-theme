@@ -63,6 +63,5 @@ preview:
 	inkscape -h 288 src/preview/theme-preview.svg -o generated/theme-store-preview.png
 	inkscape -h 480 src/preview/compare-window-buttons.svg -o generated/compare-window-buttons.png
 	inkscape -h 480 src/preview/compare-tabs.svg -o generated/compare-tabs.png
-	inkscape -h 480 src/preview/compare-font.svg -o generated/compare-font.png
 	inkscape -h 480 src/preview/compare-color.svg -o generated/compare-color.png
 	inkscape -h 480 src/preview/compare-icons.svg -o generated/compare-icons.png

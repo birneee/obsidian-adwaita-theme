@@ -22,7 +22,7 @@ Change under `Settings > Options > Appearance > Base color scheme`.
 <img src="generated/compare-color.png">
 
 ### Font
-<img src="generated/compare-font.png">
+This theme uses the system font.
 
 ### Style Settings Plugin Support
 For customization see [Style Settings](#style-settings).

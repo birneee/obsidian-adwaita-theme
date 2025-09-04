@@ -442,18 +442,6 @@ body {
     }
 }
 
-// Adwaita font
-body {
-    --titlebar-height: 45px;
-    --font-interface-theme: Cantarell;
-    --font-ui-small: 15px;
-    --h1-weight: 900;
-    .titlebar-text {
-        top: 10px;
-        height: auto;
-    }
-}
-
 // Adwaita icons
 body {
     --titlebar-height: 45px;

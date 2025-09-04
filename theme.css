@@ -483,15 +483,6 @@ body {
 
 body {
   --titlebar-height: 45px;
-  --font-interface-theme: Cantarell;
-  --font-ui-small: 15px;
-  --h1-weight: 900; }
-  body .titlebar-text {
-    top: 10px;
-    height: auto; }
-
-body {
-  --titlebar-height: 45px;
   --header-height: 46px; }
   body svg.logo-wireframe {
     stroke-width: 45; }
