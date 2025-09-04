@@ -28,6 +28,15 @@ settings:
         id: adwaita-window-button-close-hide
         title: Hide close button
         type: class-toggle
+    -
+        title: Tabs
+        type: heading
+        level: 2
+        collapsed: false
+    -
+        id: adwaita-tabs-short
+        title: Short
+        type: class-toggle
 */
 :root {
   --adwaita-mod-scale: 1;
@@ -500,8 +509,8 @@ body {
   body .mod-left-split .workspace-tabs .workspace-tab-header,
   body .mod-right-split .workspace-tabs .workspace-tab-header,
   body .sidebar-toggle-button .clickable-icon,
-  body .mod-top .view-header-nav-buttons .clickable-icon,
-  body .workspace-tabs.mod-top .workspace-tab-header-container .clickable-icon {
+  body .view-header-nav-buttons .clickable-icon,
+  body .workspace-tabs .workspace-tab-header-container .clickable-icon {
     height: 34px;
     min-width: 34px;
     margin-top: auto;
