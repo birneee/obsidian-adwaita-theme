@@ -1,40 +1,39 @@
 // source: https://gnome.pages.gitlab.gnome.org/libadwaita/doc/main/named-colors.html
 
 @mixin adwaita-colors-dark {
-    --adwaita-accent-color: #78aeed;
-    --adwaita-accent-bg-color: #78aeed;
+    --adwaita-accent-color: oklab(from #3584e4 max(l, 0.85) a b);
+    --adwaita-accent-bg-color: #3584e4;
     --adwaita-accent-fg-color: #ffffff;
 
-    --adwaita-destructive-color: #ff7b63;
+    --adwaita-destructive-color: oklab(from #c01c28 max(l, 0.85) a b);
     --adwaita-destructive-bg-color: #c01c28;
     --adwaita-destructive-fg-color: #ffffff;
 
-    --adwaita-success-color: #8ff0a4;
+    --adwaita-success-color: oklab(from #26a269 max(l, 0.85) a b);
     --adwaita-success-bg-color: #26a269;
     --adwaita-success-fg-color: #ffffff;
 
-    --adwaita-warning-color: #f8e45c;
+    --adwaita-warning-color: oklab(from #cd9309 max(l, 0.85) a b);
     --adwaita-warning-bg-color: #cd9309;
     --adwaita-warning-fg-color: rgba(0, 0, 0, 0.8);
 
-    --adwaita-error-color: #ff7b63;
+    --adwaita-error-color: oklab(from #c01c28 max(l, 0.85) a b);
     --adwaita-error-bg-color: #c01c28;
     --adwaita-error-fg-color: #ffffff;
 
     --adwaita-window-bg-color: #222226;
     --adwaita-window-fg-color: #ffffff;
 
-    --adwaita-view-bg-color: #222226;
+    --adwaita-view-bg-color: #1d1d20;
     --adwaita-view-fg-color: #ffffff;
 
     --adwaita-headerbar-bg-color: #2e2e32;
     --adwaita-headerbar-fg-color: #ffffff;
-
-    --adwaita-headerbar-border-color: rgba(0, 0, 0, 0.9);
+    --adwaita-headerbar-border-color: #ffffff;
     --adwaita-headerbar-backdrop-color: #222226;
-    --adwaita-headerbar-shade-color: rgba(0, 0, 0, 0.9);
+    --adwaita-headerbar-shade-color: rgba(0, 0, 6, 0.36);
 
-    --adwaita-card-bg-color: rgba(255, 255, 255, 0.08);
+    --adwaita-card-bg-color: rgba(255, 255, 255, 0.08); // 8%
     --adwaita-card-fg-color: #ffffff;
     --adwaita-card-shade-color: rgba(0, 0, 6, 0.36);
 
@@ -43,8 +42,8 @@
 
     --adwaita-popover-bg-color: #36363a;
     --adwaita-popover-fg-color: #ffffff;
-    --adwaita-popover-shader-color: rgba(0, 0, 0, 0.36);
+    --adwaita-popover-shader-color: rgba(0, 0, 6, 0.25);
 
-    --adwaita-shade-color: rgba(0, 0, 0, 0.36);
-    --adwaita-scrollbar-outline-color: rgba(0, 0, 0, 0.5);
+    --adwaita-shade-color: rgba(0, 0, 6, 0.25);
+    --adwaita-scrollbar-outline-color: rgba(0, 0, 12, 0.95);
 }
