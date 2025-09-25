@@ -381,7 +381,7 @@ body.adwaita-mod-linux-only.mod-linux {
 body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux, // default if obsidian-style-settings plugin is not used
 body.adwaita-tabs-always,
 body.adwaita-tabs-linux-only.mod-linux {
-    --tab-radius-active: 4px;
+    --tab-radius-active: 6px;
 
     &:not(.adwaita-tabs-short) {
         --tab-width: 10000px; /* infinite width */
