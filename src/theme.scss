@@ -109,7 +109,7 @@ settings:
     -
         id: adwaita-font
         title: Enable
-        description: Whether to use the Cantarell font (must be installed on system)
+        description: Whether to use the Adwaita Sans font (must be installed on system)
         type: class-select
         default: adwaita-font-linux-only
         allowEmpty: false
@@ -460,7 +460,7 @@ body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mo
 body.adwaita-font-always,
 body.adwaita-font-linux-only.mod-linux {    
     --titlebar-height: 45px;
-    --font-interface-theme: Cantarell;
+    --font-interface-theme: 'Adwaita Sans';
     --font-ui-small: 15px;
     --h1-weight: 900;
     .titlebar-text {
