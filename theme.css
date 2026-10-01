@@ -28,11 +28,22 @@ settings:
                 label: Never
                 value: adwaita-mod-never
     -
+        id: adwaita-window-buttons-left
+        title: Window buttons on left
+        description: Move the window buttons to the left (does not detect the GNOME system setting)
+        type: class-toggle
+    -
         id: adwaita-mod-scale
         title: Scale
         description:
         type: variable-number
         default: 1
+    -
+        id: adwaita-mod-left-margin
+        title: Left Margin
+        type: variable-number
+        default: 8
+        format: px
     -
         id: adwaita-mod-right-margin
         title: Right Margin
@@ -151,6 +162,7 @@ settings:
 :root {
   --adwaita-mod-scale: 1;
   --adwaita-mod-right-margin: 8px;
+  --adwaita-mod-left-margin: 8px;
   /* TODO window radius */ }
 
 :root {
@@ -344,7 +356,8 @@ body.adwaita-colors-linux-only.mod-linux {
 body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux,
 body.adwaita-mod-always,
 body.adwaita-mod-linux-only.mod-linux {
-  --frame-right-space: calc(var(--adwaita-mod-scale) * 120px);
+  --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * 120px);
+  --frame-right-space: var(--adwaita-mod-buttons-space);
   --adwaita-mod-foreground-focus: var(--adwaita-headerbar-fg-color); }
   body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.theme-dark,
   body.adwaita-mod-always.theme-dark,
@@ -381,7 +394,7 @@ body.adwaita-mod-linux-only.mod-linux {
   body.adwaita-mod-linux-only.mod-linux.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide),
   body.adwaita-mod-linux-only.mod-linux.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide),
   body.adwaita-mod-linux-only.mod-linux.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide) {
-    --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px)); }
+    --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * (120px - 38px)); }
   body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide), body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide), body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide),
   body.adwaita-mod-always.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide),
   body.adwaita-mod-always.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide),
@@ -389,11 +402,11 @@ body.adwaita-mod-linux-only.mod-linux {
   body.adwaita-mod-linux-only.mod-linux.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide),
   body.adwaita-mod-linux-only.mod-linux.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide),
   body.adwaita-mod-linux-only.mod-linux.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide) {
-    --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px)); }
+    --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px)); }
   body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide,
   body.adwaita-mod-always.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide,
   body.adwaita-mod-linux-only.mod-linux.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide {
-    --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px - 38px)); }
+    --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px - 38px)); }
   body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .titlebar-button-container.mod-right,
   body.adwaita-mod-always .titlebar-button-container.mod-right,
   body.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right {
@@ -497,6 +510,31 @@ body.adwaita-mod-linux-only.mod-linux {
       -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
       mask-image: var(--adwaita-icon-window-close-symbolic);
       background-color: currentColor; }
+
+body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never),
+body.adwaita-window-buttons-left.adwaita-mod-always,
+body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux {
+  /* The left header already has room for one button-sized slot. */
+  --frame-left-space: calc(var(--adwaita-mod-buttons-space) - 38px);
+  --frame-right-space: 0px; }
+  body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide,
+  body.adwaita-window-buttons-left.adwaita-mod-always.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide,
+  body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide {
+    --frame-left-space: 0px; }
+  body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never) .titlebar-button-container.mod-right,
+  body.adwaita-window-buttons-left.adwaita-mod-always .titlebar-button-container.mod-right,
+  body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right {
+    position: absolute;
+    left: 0;
+    right: auto;
+    flex-direction: row-reverse;
+    margin-left: var(--adwaita-mod-left-margin);
+    margin-right: 0;
+    transform-origin: left; }
+    body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never) .titlebar-button-container.mod-right .titlebar-button,
+    body.adwaita-window-buttons-left.adwaita-mod-always .titlebar-button-container.mod-right .titlebar-button,
+    body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right .titlebar-button {
+      margin: auto 14px auto 0; }
 
 body:not(.adwaita-tabs-always, .adwaita-tabs-linux-only, .adwaita-tabs-never).mod-linux,
 body.adwaita-tabs-always,

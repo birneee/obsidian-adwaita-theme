@@ -27,11 +27,22 @@ settings:
                 label: Never
                 value: adwaita-mod-never
     -
+        id: adwaita-window-buttons-left
+        title: Window buttons on left
+        description: Move the window buttons to the left (does not detect the GNOME system setting)
+        type: class-toggle
+    -
         id: adwaita-mod-scale
         title: Scale
         description:
         type: variable-number
         default: 1
+    -
+        id: adwaita-mod-left-margin
+        title: Left Margin
+        type: variable-number
+        default: 8
+        format: px
     -
         id: adwaita-mod-right-margin
         title: Right Margin
@@ -151,6 +162,7 @@ settings:
 :root {
     --adwaita-mod-scale: 1;
     --adwaita-mod-right-margin: 8px;
+    --adwaita-mod-left-margin: 8px;
     /* TODO window radius */
 }
 
@@ -228,7 +240,8 @@ body.adwaita-colors-linux-only.mod-linux {
 body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux, // default if obsidian-style-settings plugin is not used
 body.adwaita-mod-always,
 body.adwaita-mod-linux-only.mod-linux {
-    --frame-right-space: calc(var(--adwaita-mod-scale) * 120px);
+    --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * 120px);
+    --frame-right-space: var(--adwaita-mod-buttons-space);
     --adwaita-mod-foreground-focus: var(--adwaita-headerbar-fg-color);
 
     &.theme-dark {
@@ -238,7 +251,7 @@ body.adwaita-mod-linux-only.mod-linux {
         --adwaita-mod-background-active: #6e6e6e;
         --adwaita-mod-foreground: #929292;
     }
-    
+
     &.theme-light {
         --adwaita-mod-background: #efefef;
         --adwaita-mod-background-focus: #d8d8d8;
@@ -264,25 +277,26 @@ body.adwaita-mod-linux-only.mod-linux {
     &.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide),
     &.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide),
     &.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide){
-        --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px));
+        --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * (120px - 38px));
     }
 
     &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide:not(.adwaita-window-button-close-hide),
     &.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide:not(.adwaita-window-button-minimize-hide),
     &.adwaita-window-button-close-hide.adwaita-window-button-minimize-hide:not(.adwaita-window-button-maximize-hide){
-        --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px));
+        --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px));
     }
 
     &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide{
-        --frame-right-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px - 38px));
+        --adwaita-mod-buttons-space: calc(var(--adwaita-mod-scale) * (120px - 38px - 38px - 38px));
     }
+
 
 
     .titlebar-button-container.mod-right {
         transform: scale(var(--adwaita-mod-scale));
         margin-right: var(--adwaita-mod-right-margin);
         transform-origin: right;
-    
+
         .titlebar-button {
             height: 24px;
             width: 24px;
@@ -292,7 +306,7 @@ body.adwaita-mod-linux-only.mod-linux {
 
             background: var(--adwaita-mod-background);
             color: var(--adwaita-mod-foreground);
-    
+
             &.mod-minimize,
             &.mod-maximize,
             &.mod-close {
@@ -300,7 +314,7 @@ body.adwaita-mod-linux-only.mod-linux {
                     display: none;
                 }
             }
-    
+
             &::after {
                 content: '';
                 background-color: currentColor;
@@ -308,26 +322,26 @@ body.adwaita-mod-linux-only.mod-linux {
                 height: 16px;
                 margin: auto;
             }
-    
+
             &.mod-minimize::after {
                 -webkit-mask-image: var(--adwaita-icon-window-minimize-symbolic);
                 mask-image: var(--adwaita-icon-window-minimize-symbolic);
             }
-    
+
             &.mod-maximize::after {
                 -webkit-mask-image: var(--adwaita-icon-window-maximize-symbolic);
                 mask-image: var(--adwaita-icon-window-maximize-symbolic);
             }
-    
+
             &.mod-close::after {
                 -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
                 mask-image: var(--adwaita-icon-window-close-symbolic);
             }
-    
+
             &:hover {
                 background: var(--adwaita-mod-background)!important;
             }
-    
+
             svg {
                 width: 12px;
                 height: 12px;
@@ -335,16 +349,40 @@ body.adwaita-mod-linux-only.mod-linux {
             }
         }
     }
+    &.adwaita-window-buttons-left {
+        --frame-left-space: calc(var(--adwaita-mod-buttons-space) - 38px);
+        --frame-right-space: 0px;
+
+        &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide {
+            --frame-left-space: 0px;
+        }
+
+        .titlebar-button-container.mod-right {
+            position: absolute;
+            left: 0;
+            right: auto;
+            flex-direction: row-reverse;
+            margin-left: var(--adwaita-mod-left-margin);
+            margin-right: 0;
+            transform-origin: left;
+
+            .titlebar-button {
+                margin: auto 14px auto 0;
+            }
+        }
+
+    }
+
     &.is-focused {
         .titlebar-button-container.mod-right .titlebar-button,
         .modal-close-button {
             background: var(--adwaita-mod-background-focus);
             color: var(--adwaita-mod-foreground-focus);
-        
+
             &:hover {
                 background: var(--adwaita-mod-background-hover)!important;
             }
-        
+
             &:active {
                 background: var(--adwaita-mod-background-active)!important;
             }
@@ -359,7 +397,7 @@ body.adwaita-mod-linux-only.mod-linux {
         background: var(--adwaita-mod-background);
         transform: scale(var(--adwaita-mod-scale));
         transform-origin: right;
-    
+
         &:before {
             content: '';
             display: block;
@@ -458,7 +496,7 @@ body.adwaita-tabs-linux-only.mod-linux {
 // Adwaita font
 body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux, // default if obsidian-style-settings plugin is not used
 body.adwaita-font-always,
-body.adwaita-font-linux-only.mod-linux {    
+body.adwaita-font-linux-only.mod-linux {
     --titlebar-height: 45px;
     --font-interface-theme: Cantarell;
     --font-ui-small: 15px;
