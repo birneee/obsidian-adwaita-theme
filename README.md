@@ -71,6 +71,8 @@ As a workaround use the [Rounded Window Corners](https://extensions.gnome.org/ex
 Requires the [Obsidian Style Settings Plugin](https://github.com/mgmeyers/obsidian-style-settings).
 Adjust under `Settings > Community Plugins > Style Settings > Adwaita`.
 
+To put the window buttons on the left, enable **Window Buttons → Window buttons on left**. The theme cannot read GNOME's button-layout setting, so this must be selected manually. The right-side layout remains the default. **Left Margin** controls the spacing from the window edge when this option is enabled.
+
 ![](src/preview/style-settings.png)
 
 ## Contribution
