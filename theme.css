@@ -514,13 +514,26 @@ body.adwaita-mod-linux-only.mod-linux {
 body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never),
 body.adwaita-window-buttons-left.adwaita-mod-always,
 body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux {
-  /* The left header already has room for one button-sized slot. */
-  --frame-left-space: calc(var(--adwaita-mod-buttons-space) - 38px);
+  --frame-left-space: var(--adwaita-mod-buttons-space);
   --frame-right-space: 0px; }
   body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide,
   body.adwaita-window-buttons-left.adwaita-mod-always.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide,
   body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide {
     --frame-left-space: 0px; }
+  body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never) .workspace-ribbon.mod-left,
+  body.adwaita-window-buttons-left.adwaita-mod-always .workspace-ribbon.mod-left,
+  body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux .workspace-ribbon.mod-left {
+    overflow: visible; }
+    /* Obsidian's ribbon corner is a draggable overlay above the close button. */
+    body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never) .workspace-ribbon.mod-left::before,
+    body.adwaita-window-buttons-left.adwaita-mod-always .workspace-ribbon.mod-left::before,
+    body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux .workspace-ribbon.mod-left::before {
+      -webkit-app-region: no-drag;
+      pointer-events: none; }
+    body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never) .workspace-ribbon.mod-left .sidebar-toggle-button.mod-left,
+    body.adwaita-window-buttons-left.adwaita-mod-always .workspace-ribbon.mod-left .sidebar-toggle-button.mod-left,
+    body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux .workspace-ribbon.mod-left .sidebar-toggle-button.mod-left {
+      left: var(--adwaita-mod-buttons-space); }
   body.adwaita-window-buttons-left.mod-linux:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never) .titlebar-button-container.mod-right,
   body.adwaita-window-buttons-left.adwaita-mod-always .titlebar-button-container.mod-right,
   body.adwaita-window-buttons-left.adwaita-mod-linux-only.mod-linux .titlebar-button-container.mod-right {

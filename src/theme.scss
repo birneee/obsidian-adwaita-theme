@@ -350,11 +350,25 @@ body.adwaita-mod-linux-only.mod-linux {
         }
     }
     &.adwaita-window-buttons-left {
-        --frame-left-space: calc(var(--adwaita-mod-buttons-space) - 38px);
+        --frame-left-space: var(--adwaita-mod-buttons-space);
         --frame-right-space: 0px;
 
         &.adwaita-window-button-minimize-hide.adwaita-window-button-maximize-hide.adwaita-window-button-close-hide {
             --frame-left-space: 0px;
+        }
+
+        .workspace-ribbon.mod-left {
+            overflow: visible;
+
+            // Obsidian's ribbon corner is a draggable overlay above the close button.
+            &::before {
+                -webkit-app-region: no-drag;
+                pointer-events: none;
+            }
+
+            .sidebar-toggle-button.mod-left {
+                left: var(--adwaita-mod-buttons-space);
+            }
         }
 
         .titlebar-button-container.mod-right {
