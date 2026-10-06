@@ -160,6 +160,8 @@ settings:
 @import 'adwaita_colors';
 
 body {
+    // restore pre-1.14 default, Obsidian 1.14 changed it to start on desktop
+    --file-header-justify: center;
     @include adwaita-colors;
     &.theme-dark {
         @include adwaita-colors-dark;

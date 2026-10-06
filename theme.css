@@ -166,6 +166,7 @@ settings:
   --adwaita-icon-window-minimize-symbolic: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgd2lkdGg9IjE2cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCBkPSJtIDQgMTAuMDA3ODEyIGggOCB2IDEuOTg4MjgyIGggLTggeiBtIDAgMCIgZmlsbD0iIzJlMzQzNiIvPgo8L3N2Zz4K"); }
 
 body {
+  --file-header-justify: center;
   --adwaita-blue-1: #99c1f1;
   --adwaita-blue-2: #62a0ea;
   --adwaita-blue-3: #3584e4;
