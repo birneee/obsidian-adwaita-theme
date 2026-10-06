@@ -345,7 +345,8 @@ body.adwaita-mod-linux-only.mod-linux {
     }
     &.is-focused {
         .titlebar-button-container.mod-right .titlebar-button,
-        .modal-close-button {
+        .modal-close-button,
+        .modal-header-button {
             background: var(--adwaita-mod-background-focus);
             color: var(--adwaita-mod-foreground-focus);
         
@@ -377,6 +378,35 @@ body.adwaita-mod-linux-only.mod-linux {
             top: 50%;
             position: absolute;
             transform: translateY(-50%);
+            -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
+            mask-image: var(--adwaita-icon-window-close-symbolic);
+            background-color: currentColor;
+        }
+    }
+
+    .modal-header-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        padding: 0;
+        border-radius: 12px;
+        opacity: 1;
+        color: var(--adwaita-mod-foreground);
+        background: var(--adwaita-mod-background);
+        transform: scale(var(--adwaita-mod-scale));
+        transform-origin: right;
+
+        svg {
+            display: none;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 16px;
+            height: 16px;
             -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
             mask-image: var(--adwaita-icon-window-close-symbolic);
             background-color: currentColor;
