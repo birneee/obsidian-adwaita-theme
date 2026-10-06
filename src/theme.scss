@@ -178,6 +178,14 @@ body.adwaita-colors-linux-only.mod-linux {
     --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
     --text-normal: var(--adwaita-view-fg-color);
     &.is-focused {
+        .sidebar-toggle-button,
+        .workspace-tabs.mod-top {
+            --tab-container-background: var(--titlebar-background-focused);
+            --sidebar-tab-container-background: var(--titlebar-background-focused);
+        }
+        .workspace-ribbon.mod-primary {
+            --titlebar-background: var(--titlebar-background-focused);
+        }
         .workspace-tabs.mod-top .workspace-tab-header-container,
         .sidebar-toggle-button {
             --icon-color: var(--adwaita-headerbar-fg-color);

@@ -289,6 +289,18 @@ body.adwaita-colors-linux-only.mod-linux {
   --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
   --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
   --text-normal: var(--adwaita-view-fg-color); }
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .sidebar-toggle-button,
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .workspace-tabs.mod-top,
+  body.adwaita-colors-always.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-always.is-focused .workspace-tabs.mod-top,
+  body.adwaita-colors-linux-only.mod-linux.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-linux-only.mod-linux.is-focused .workspace-tabs.mod-top {
+    --tab-container-background: var(--titlebar-background-focused);
+    --sidebar-tab-container-background: var(--titlebar-background-focused); }
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .workspace-ribbon.mod-primary,
+  body.adwaita-colors-always.is-focused .workspace-ribbon.mod-primary,
+  body.adwaita-colors-linux-only.mod-linux.is-focused .workspace-ribbon.mod-primary {
+    --titlebar-background: var(--titlebar-background-focused); }
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .sidebar-toggle-button,
   body.adwaita-colors-always.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
