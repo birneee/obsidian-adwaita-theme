@@ -602,11 +602,6 @@ body.adwaita-font-linux-only.mod-linux {
   --font-interface-theme: Cantarell;
   --font-ui-small: 15px;
   --h1-weight: 900; }
-  body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux .titlebar-text,
-  body.adwaita-font-always .titlebar-text,
-  body.adwaita-font-linux-only.mod-linux .titlebar-text {
-    top: 10px;
-    height: auto; }
 
 body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux,
 body.adwaita-icons-always,
