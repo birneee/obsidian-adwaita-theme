@@ -166,6 +166,7 @@ settings:
   --adwaita-icon-window-minimize-symbolic: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBoZWlnaHQ9IjE2cHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgd2lkdGg9IjE2cHgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8cGF0aCBkPSJtIDQgMTAuMDA3ODEyIGggOCB2IDEuOTg4MjgyIGggLTggeiBtIDAgMCIgZmlsbD0iIzJlMzQzNiIvPgo8L3N2Zz4K"); }
 
 body {
+  --file-header-justify: center;
   --adwaita-blue-1: #99c1f1;
   --adwaita-blue-2: #62a0ea;
   --adwaita-blue-3: #3584e4;
@@ -289,6 +290,18 @@ body.adwaita-colors-linux-only.mod-linux {
   --titlebar-background-focused: var(--adwaita-headerbar-bg-color);
   --titlebar-text-color-focused: var(--adwaita-headerbar-fg-color);
   --text-normal: var(--adwaita-view-fg-color); }
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .sidebar-toggle-button,
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .workspace-tabs.mod-top,
+  body.adwaita-colors-always.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-always.is-focused .workspace-tabs.mod-top,
+  body.adwaita-colors-linux-only.mod-linux.is-focused .sidebar-toggle-button,
+  body.adwaita-colors-linux-only.mod-linux.is-focused .workspace-tabs.mod-top {
+    --tab-container-background: var(--titlebar-background-focused);
+    --sidebar-tab-container-background: var(--titlebar-background-focused); }
+  body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .workspace-ribbon.mod-primary,
+  body.adwaita-colors-always.is-focused .workspace-ribbon.mod-primary,
+  body.adwaita-colors-linux-only.mod-linux.is-focused .workspace-ribbon.mod-primary {
+    --titlebar-background: var(--titlebar-background-focused); }
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
   body:not(.adwaita-colors-always, .adwaita-colors-linux-only, .adwaita-colors-never).mod-linux.is-focused .sidebar-toggle-button,
   body.adwaita-colors-always.is-focused .workspace-tabs.mod-top .workspace-tab-header-container,
@@ -453,25 +466,34 @@ body.adwaita-mod-linux-only.mod-linux {
         margin: auto; }
   body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button,
   body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-close-button,
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-header-button,
   body.adwaita-mod-always.is-focused .titlebar-button-container.mod-right .titlebar-button,
   body.adwaita-mod-always.is-focused .modal-close-button,
+  body.adwaita-mod-always.is-focused .modal-header-button,
   body.adwaita-mod-linux-only.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button,
-  body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button {
+  body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button,
+  body.adwaita-mod-linux-only.mod-linux.is-focused .modal-header-button {
     background: var(--adwaita-mod-background-focus);
     color: var(--adwaita-mod-foreground-focus); }
     body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:hover,
     body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-close-button:hover,
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-header-button:hover,
     body.adwaita-mod-always.is-focused .titlebar-button-container.mod-right .titlebar-button:hover,
     body.adwaita-mod-always.is-focused .modal-close-button:hover,
+    body.adwaita-mod-always.is-focused .modal-header-button:hover,
     body.adwaita-mod-linux-only.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:hover,
-    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button:hover {
+    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button:hover,
+    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-header-button:hover {
       background: var(--adwaita-mod-background-hover) !important; }
     body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:active,
     body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-close-button:active,
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux.is-focused .modal-header-button:active,
     body.adwaita-mod-always.is-focused .titlebar-button-container.mod-right .titlebar-button:active,
     body.adwaita-mod-always.is-focused .modal-close-button:active,
+    body.adwaita-mod-always.is-focused .modal-header-button:active,
     body.adwaita-mod-linux-only.mod-linux.is-focused .titlebar-button-container.mod-right .titlebar-button:active,
-    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button:active {
+    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-close-button:active,
+    body.adwaita-mod-linux-only.mod-linux.is-focused .modal-header-button:active {
       background: var(--adwaita-mod-background-active) !important; }
   body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .modal-close-button,
   body.adwaita-mod-always .modal-close-button,
@@ -494,6 +516,35 @@ body.adwaita-mod-linux-only.mod-linux {
       top: 50%;
       position: absolute;
       transform: translateY(-50%);
+      -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
+      mask-image: var(--adwaita-icon-window-close-symbolic);
+      background-color: currentColor; }
+  body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .modal-header-button,
+  body.adwaita-mod-always .modal-header-button,
+  body.adwaita-mod-linux-only.mod-linux .modal-header-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    padding: 0;
+    border-radius: 12px;
+    opacity: 1;
+    color: var(--adwaita-mod-foreground);
+    background: var(--adwaita-mod-background);
+    transform: scale(var(--adwaita-mod-scale));
+    transform-origin: right; }
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .modal-header-button svg,
+    body.adwaita-mod-always .modal-header-button svg,
+    body.adwaita-mod-linux-only.mod-linux .modal-header-button svg {
+      display: none; }
+    body:not(.adwaita-mod-always, .adwaita-mod-linux-only, .adwaita-mod-never).mod-linux .modal-header-button::before,
+    body.adwaita-mod-always .modal-header-button::before,
+    body.adwaita-mod-linux-only.mod-linux .modal-header-button::before {
+      content: '';
+      display: block;
+      width: 16px;
+      height: 16px;
       -webkit-mask-image: var(--adwaita-icon-window-close-symbolic);
       mask-image: var(--adwaita-icon-window-close-symbolic);
       background-color: currentColor; }
@@ -590,11 +641,6 @@ body.adwaita-font-linux-only.mod-linux {
   --font-interface-theme: Cantarell;
   --font-ui-small: 15px;
   --h1-weight: 900; }
-  body:not(.adwaita-font-always, .adwaita-font-linux-only, .adwaita-font-never).mod-linux .titlebar-text,
-  body.adwaita-font-always .titlebar-text,
-  body.adwaita-font-linux-only.mod-linux .titlebar-text {
-    top: 10px;
-    height: auto; }
 
 body:not(.adwaita-icons-always, .adwaita-icons-linux-only, .adwaita-icons-never).mod-linux,
 body.adwaita-icons-always,
